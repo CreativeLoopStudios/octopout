@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oSolid</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-max_spd = 6;
+max_spd = 12;
 friction = 0.2;
 
 init_width = sprite_width;
@@ -77,7 +77,7 @@ if(not(gamepad_pressed) and not(keyboard_pressed))
     hspeed = 0;
 }
 
-keep_inside_room(sprite_width, sprite_height, max_spd);
+KeepInsideRoom(sprite_width, sprite_height, max_spd);
 </string>
           </argument>
         </arguments>
