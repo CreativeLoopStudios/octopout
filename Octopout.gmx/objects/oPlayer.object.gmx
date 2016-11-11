@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-max_spd = 12;
-friction = 0.2;
+accel = 24 / room_speed;
+decel = 1 / room_speed;
+max_spd = 400 / room_speed;
 
 init_width = sprite_width;
 init_height = sprite_height;
@@ -60,20 +61,35 @@ var left_pressed = keyboard_check(vk_left);
 var right_pressed = keyboard_check(vk_right);
 
 // if gamepad or keyboard are pressed
-var gamepad_pressed = gamepad_horizontal_left_pressed || gamepad_horizontal_right_pressed;
-var keyboard_pressed = left_pressed || right_pressed;
+var gamepad_pressed = gamepad_horizontal_left_pressed or gamepad_horizontal_right_pressed;
+var keyboard_pressed = left_pressed or right_pressed;
 
-if(gamepad_horizontal_left_pressed || left_pressed)
+var left_right_pressed_or_not = (left_pressed and right_pressed) or (not(left_pressed) and not(right_pressed));
+var gamepad_pressed_or_not = (gamepad_horizontal_left_pressed and gamepad_horizontal_right_pressed) or (not(gamepad_horizontal_left_pressed) and not(gamepad_horizontal_right_pressed));
+
+// If right is pressed accelerate hspeed in the right direction
+if (right_pressed or gamepad_horizontal_right_pressed)
 {
-    hspeed = -max_spd;
-}
-else if(gamepad_horizontal_right_pressed || right_pressed)
-{
-    hspeed = max_spd;
+    hspeed += accel;
+    hspeed = min(hspeed, max_spd);
 }
 
-if(not(gamepad_pressed) and not(keyboard_pressed))
-{
+// if right is not pressed decelerate
+if(hspeed &gt; 0 and (not(right_pressed) and not(gamepad_horizontal_right_pressed))) {
+    hspeed -= decel;
+}
+
+// If left is pressed accelerate hspeed in the left direction
+if(left_pressed or gamepad_horizontal_left_pressed) {
+    hspeed -= accel;
+    hspeed = max(hspeed, -max_spd);
+}
+
+if(hspeed &lt; 0 and (not(left_pressed) and not(gamepad_horizontal_left_pressed))) {
+    hspeed += decel;
+}
+
+if(left_right_pressed_or_not and gamepad_pressed_or_not) {
     hspeed = 0;
 }
 

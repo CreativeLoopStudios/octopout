@@ -10,7 +10,9 @@
     <sprite>sprites\sBall</sprite>
     <sprite>sprites\sBrick</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bgSea</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Debug">
@@ -19,11 +21,19 @@
       <script>scripts\DebugLogInitialise.gml</script>
     </scripts>
     <script>scripts\KeepInsideRoom.gml</script>
+    <script>scripts\BrickHitDetected.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shOutline.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\fDebug</font>
   </fonts>
   <objects name="objects">
+    <objects name="physicsObjects">
+      <object>objects\oSolid</object>
+      <object>objects\oDefaultBrick</object>
+    </objects>
     <objects name="player">
       <object>objects\oPlayer</object>
     </objects>
@@ -32,7 +42,6 @@
     </objects>
     <object>objects\oGame</object>
     <object>objects\oBall</object>
-    <object>objects\oSolid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rLevel1</room>

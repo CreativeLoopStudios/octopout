@@ -2,7 +2,7 @@
 with oGame {
 
     //Define what channel we're listening to 
-    DebugChannel = "CollisionSolid"
+    DebugChannel = "X"
     
     //Turn what we were given into text
     var DebugString = string(argument0);//,18,6);

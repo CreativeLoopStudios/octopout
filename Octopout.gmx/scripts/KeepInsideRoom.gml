@@ -1,12 +1,15 @@
-var width = argument0;
-var height = argument1;
-var spd = argument2;
+var Width = argument0;
+var Height = argument1;
+var Spd = argument2;
 
-var half_width = 0;
-var half_height = 0;
+var HalfWidth = 0;
+var HalfHeight = 0;
 
-if (width > 0) half_width = width / 2;
-if (height > 0) half_height = height / 2;
+if (Width > 0) HalfWidth = Width / 2;
+if (Height > 0) HalfHeight = Height / 2;
 
-x = clamp(x, half_width, room_width - half_width);
-y = clamp(y, half_height, room_height - half_height);
+var XLeft = x - HalfWidth;
+var XRight = x + HalfWidth;
+
+x = clamp(x, HalfWidth, room_width - HalfWidth);
+y = clamp(y, HalfHeight, room_height - HalfHeight);
