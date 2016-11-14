@@ -34,6 +34,8 @@ AnimationSpeed = 0.2;
 
 init_width = sprite_width;
 init_height = sprite_height;
+
+NumberOfBubblesWhenMoving = 2;
 </string>
           </argument>
         </arguments>
@@ -75,6 +77,9 @@ if (right_pressed or gamepad_horizontal_right_pressed)
     hspeed += accel;
     hspeed = min(hspeed, max_spd);
     ChangeSprite(sPlayerRight, AnimationSpeed);
+    CreateBubble(x, random_range(y, y - (sprite_width / 2)), NumberOfBubblesWhenMoving);
+    CreateBubble(x, y, NumberOfBubblesWhenMoving);
+    CreateBubble(x, random_range(y, y + (sprite_width / 2)), NumberOfBubblesWhenMoving);
 }
 
 // If left is pressed accelerate hspeed in the left direction
@@ -82,6 +87,9 @@ if(left_pressed or gamepad_horizontal_left_pressed) {
     hspeed -= accel;
     hspeed = max(hspeed, -max_spd);
     ChangeSprite(sPlayerLeft, AnimationSpeed);
+    CreateBubble(x, random_range(y, y - (sprite_width / 2)), NumberOfBubblesWhenMoving);
+    CreateBubble(x, y, NumberOfBubblesWhenMoving);
+    CreateBubble(x, random_range(y, y + (sprite_width / 2)), NumberOfBubblesWhenMoving);
 }
 
 if(left_right_pressed_or_not and gamepad_pressed_or_not) {

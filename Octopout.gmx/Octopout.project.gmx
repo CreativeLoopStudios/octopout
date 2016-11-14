@@ -28,7 +28,10 @@
       <sprite>sprites\sMiniBrickPurple</sprite>
       <sprite>sprites\sMiniBrickBomb</sprite>
     </sprites>
-    <sprite>sprites\sBubble</sprite>
+    <sprites name="backgroundLife">
+      <sprite>sprites\sBubble</sprite>
+      <sprite>sprites\sJellyfish</sprite>
+    </sprites>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sBall</sprite>
   </sprites>
@@ -48,6 +51,12 @@
     <scripts name="Util">
       <script>scripts\ChangeSprite.gml</script>
       <script>scripts\KeepInsideRoom.gml</script>
+    </scripts>
+    <scripts name="Particles">
+      <script>scripts\CreateBubble.gml</script>
+    </scripts>
+    <scripts name="BackgroundLife">
+      <script>scripts\GenerateRandomLife.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -73,6 +82,10 @@
     </objects>
     <objects name="particles">
       <object>objects\oBubble</object>
+    </objects>
+    <objects name="backgroundLife">
+      <object>objects\oBackgroundJellyfish</object>
+      <object>objects\oBackgroundGenerator</object>
     </objects>
     <object>objects\oGame</object>
     <object>objects\oBall</object>

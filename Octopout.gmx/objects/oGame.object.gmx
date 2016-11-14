@@ -28,6 +28,8 @@
             <string>global.Debug = true;
 
 DebugLogInitialise();
+
+randomize();
 </string>
           </argument>
         </arguments>

@@ -70,6 +70,7 @@
     <instance objName="oBrickGreen" x="224" y="288" name="inst_EF3C9B02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBrickGreen" x="352" y="288" name="inst_AFA85DD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBrickGreen" x="480" y="288" name="inst_088DDBAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBackgroundGenerator" x="32" y="0" name="inst_14115A16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
