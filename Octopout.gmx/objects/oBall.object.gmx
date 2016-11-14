@@ -53,7 +53,7 @@ speed = max_spd;
           <argument>
             <kind>1</kind>
             <string>/// ball movement
-image_angle += speed;
+
 </string>
           </argument>
         </arguments>

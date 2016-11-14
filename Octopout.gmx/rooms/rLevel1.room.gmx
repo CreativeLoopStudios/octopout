@@ -54,19 +54,22 @@
     <instance objName="oPlayer" x="384" y="960" name="inst_D1DD23C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGame" x="0" y="0" name="inst_152CEA7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBall" x="320" y="192" name="inst_D16F5740" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="416" y="384" name="inst_4CA19573" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="288" y="320" name="inst_32B40500" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="160" y="384" name="inst_26B947EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="160" y="320" name="inst_A4C79B42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="288" y="384" name="inst_698D58B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="96" y="352" name="inst_FA2E0F5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="224" y="352" name="inst_C36F5306" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="352" y="352" name="inst_9EC8C63F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="480" y="352" name="inst_F46673A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="608" y="352" name="inst_AF81BF43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="544" y="384" name="inst_CD393438" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="544" y="320" name="inst_9E93C17E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBrick" x="416" y="320" name="inst_532AC25B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="416" y="384" name="inst_4CA19573" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="288" y="320" name="inst_32B40500" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="160" y="384" name="inst_26B947EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="160" y="320" name="inst_A4C79B42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="288" y="384" name="inst_698D58B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="96" y="352" name="inst_FA2E0F5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="224" y="352" name="inst_C36F5306" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="352" y="352" name="inst_9EC8C63F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="480" y="352" name="inst_F46673A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="608" y="352" name="inst_AF81BF43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="544" y="384" name="inst_CD393438" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="544" y="320" name="inst_9E93C17E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGlass" x="416" y="320" name="inst_532AC25B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGreen" x="224" y="288" name="inst_EF3C9B02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGreen" x="352" y="288" name="inst_AFA85DD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBrickGreen" x="480" y="288" name="inst_088DDBAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

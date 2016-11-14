@@ -1,3 +1,4 @@
+/// KeepInsideRoom(width, height, speed)
 var Width = argument0;
 var Height = argument1;
 var Spd = argument2;

@@ -6,22 +6,49 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sPlayer</sprite>
+    <sprites name="player">
+      <sprite>sprites\sPlayer</sprite>
+      <sprite>sprites\sPlayerRight</sprite>
+      <sprite>sprites\sPlayerLeft</sprite>
+    </sprites>
+    <sprites name="bricks">
+      <sprite>sprites\sBrickGlass</sprite>
+      <sprite>sprites\sBrickGreen</sprite>
+      <sprite>sprites\sBrickMetal</sprite>
+      <sprite>sprites\sBrickWall</sprite>
+      <sprite>sprites\sBrickSand</sprite>
+      <sprite>sprites\sBrickPurple</sprite>
+    </sprites>
+    <sprites name="miniBricks">
+      <sprite>sprites\sMiniBrickGlass</sprite>
+      <sprite>sprites\sMiniBrickGreen</sprite>
+      <sprite>sprites\sMiniBrickMetal</sprite>
+      <sprite>sprites\sMiniBrickWall</sprite>
+      <sprite>sprites\sMiniBrickSand</sprite>
+      <sprite>sprites\sMiniBrickPurple</sprite>
+      <sprite>sprites\sMiniBrickBomb</sprite>
+    </sprites>
+    <sprite>sprites\sBubble</sprite>
+    <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sBall</sprite>
-    <sprite>sprites\sBrick</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgSea</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Brick">
+      <script>scripts\BrickHitDetected.gml</script>
+    </scripts>
     <scripts name="Debug">
       <script>scripts\DebugLog.gml</script>
       <script>scripts\DebugLogDraw.gml</script>
       <script>scripts\DebugLogInitialise.gml</script>
     </scripts>
-    <script>scripts\KeepInsideRoom.gml</script>
-    <script>scripts\BrickHitDetected.gml</script>
+    <scripts name="Util">
+      <script>scripts\ChangeSprite.gml</script>
+      <script>scripts\KeepInsideRoom.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shOutline.shader</shader>
@@ -38,7 +65,14 @@
       <object>objects\oPlayer</object>
     </objects>
     <objects name="brick">
-      <object>objects\oBrick</object>
+      <object>objects\oBrickGlass</object>
+      <object>objects\oBrickGreen</object>
+    </objects>
+    <objects name="bosses">
+      <object>objects\oJellyFish</object>
+    </objects>
+    <objects name="particles">
+      <object>objects\oBubble</object>
     </objects>
     <object>objects\oGame</object>
     <object>objects\oBall</object>
