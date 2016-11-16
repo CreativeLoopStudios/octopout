@@ -6,12 +6,12 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="player">
+    <sprites name="Player">
       <sprite>sprites\sPlayer</sprite>
       <sprite>sprites\sPlayerRight</sprite>
       <sprite>sprites\sPlayerLeft</sprite>
     </sprites>
-    <sprites name="bricks">
+    <sprites name="Bricks">
       <sprite>sprites\sBrickGlass</sprite>
       <sprite>sprites\sBrickGreen</sprite>
       <sprite>sprites\sBrickMetal</sprite>
@@ -19,7 +19,7 @@
       <sprite>sprites\sBrickSand</sprite>
       <sprite>sprites\sBrickPurple</sprite>
     </sprites>
-    <sprites name="miniBricks">
+    <sprites name="MiniBricks">
       <sprite>sprites\sMiniBrickGlass</sprite>
       <sprite>sprites\sMiniBrickGreen</sprite>
       <sprite>sprites\sMiniBrickMetal</sprite>
@@ -28,20 +28,28 @@
       <sprite>sprites\sMiniBrickPurple</sprite>
       <sprite>sprites\sMiniBrickBomb</sprite>
     </sprites>
-    <sprites name="backgroundLife">
+    <sprites name="BackgroundLife">
       <sprite>sprites\sBubble</sprite>
       <sprite>sprites\sJellyfish</sprite>
     </sprites>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sBall</sprite>
+    <sprite>sprites\sHeartBrick</sprite>
+    <sprite>sprites\sDebugRect</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgSea</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <paths name="BossesPath">
+      <path>paths\JellyfishSwimmingPath</path>
+    </paths>
+  </paths>
   <scripts name="scripts">
     <scripts name="Brick">
       <script>scripts\BrickHitDetected.gml</script>
+      <script>scripts\CollisionWithBall.gml</script>
+      <script>scripts\SetHitsBeforeDestroy.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\DebugLog.gml</script>
@@ -66,24 +74,25 @@
     <font>fonts\fDebug</font>
   </fonts>
   <objects name="objects">
-    <objects name="physicsObjects">
+    <objects name="PhysicsObjects">
       <object>objects\oSolid</object>
-      <object>objects\oDefaultBrick</object>
     </objects>
-    <objects name="player">
+    <objects name="Player">
       <object>objects\oPlayer</object>
     </objects>
-    <objects name="brick">
-      <object>objects\oBrickGlass</object>
-      <object>objects\oBrickGreen</object>
+    <objects name="Bosses">
+      <objects name="Jellyfish">
+        <object>objects\oJellyfishManager</object>
+        <object>objects\oJellyfishMiniGlassBrick</object>
+        <object>objects\oJellyfishMiniGreenBrick</object>
+        <object>objects\oJellyfishMiniPurpleBrick</object>
+        <object>objects\oJellyfishMiniMetalBrick</object>
+      </objects>
     </objects>
-    <objects name="bosses">
-      <object>objects\oJellyFish</object>
-    </objects>
-    <objects name="particles">
+    <objects name="Particles">
       <object>objects\oBubble</object>
     </objects>
-    <objects name="backgroundLife">
+    <objects name="BackgroundLife">
       <object>objects\oBackgroundJellyfish</object>
       <object>objects\oBackgroundGenerator</object>
     </objects>

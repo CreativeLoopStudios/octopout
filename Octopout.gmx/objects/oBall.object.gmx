@@ -85,11 +85,6 @@ if (x &lt;= sprite_width / 2 or x &gt;= room_width - (sprite_width / 2))
     hspeed *= -1;
 }
 
-if place_meeting(x, y, oSolid)
-{
-    move_bounce_all(true);
-}
-
 </string>
           </argument>
         </arguments>
