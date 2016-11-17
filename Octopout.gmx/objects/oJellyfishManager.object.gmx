@@ -26,9 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
+//x = room_width / 2;
+//y = room_height / 2;
+
 BossState = "Swimming";
 
-
+path_start(pJellyfishSwimming, 3, path_action_continue, false);
 </string>
           </argument>
         </arguments>
@@ -51,17 +54,69 @@ BossState = "Swimming";
             <kind>1</kind>
             <string>/// create bricks of the boss
 // glass bricks
-var WidthMiniGlassBrick = sprite_get_width(object_get_sprite(oJellyfishMiniGlassBrick));
-var HeightMiniGlassBrick = sprite_get_height(object_get_sprite(oJellyfishMiniGlassBrick));
-X = 200;
-Y = 200;
+enum JellyfishBricks {
+    Glass = 1,
+    Green = 2,
+    Metal = 3,
+    Purple = 4,
+    Heart = 5
+}
 
-var GlassBrick = instance_create(-X, 0, oJellyfishMiniGlassBrick);
-GlassBrick.Parent = id;
-GlassBrick.XOffset = GlassBrick.x;
-GlassBrick.YOffset = GlassBrick.y;
-DebugLog(x, "Debug");
-DebugLog(y, "Debug");
+var WidthMiniBrick = sprite_get_width(object_get_sprite(oJellyfishMiniGlassBrick));
+var HeightMiniBrick = sprite_get_height(object_get_sprite(oJellyfishMiniGlassBrick));
+
+var WidthHeart = sprite_get_width(object_get_sprite(oJellyfishHeart));
+var HeightHeart = sprite_get_height(object_get_sprite(oJellyfishHeart));
+
+var JsonFile = ReadJsonFile("jellyfish-boss-map.json");
+var DefaultList = ds_map_find_value(JsonFile, "default");
+
+for(var i = 0; i &lt; 1; i++)
+{
+    var JsonObj = ds_list_find_value(DefaultList, i);
+    var WidthBoss = JsonObj[? "width"];
+    var HeightBoss = JsonObj[? "height"];
+    
+    var WidthCount = 1;
+    var HeightCount = 1;
+    
+    var BossMap = JsonObj[? "map"];
+    var Size = ds_list_size(BossMap);
+    for(var j = 0; j &lt; Size; j++)
+    {
+        var Tile = ds_list_find_value(BossMap, j);
+        switch (Tile)
+        {
+            case JellyfishBricks.Glass:
+                CreateBrick(WidthCount * WidthMiniBrick, HeightCount * HeightMiniBrick, oJellyfishMiniGlassBrick, id);
+                break;
+            case JellyfishBricks.Green:
+                CreateBrick(WidthCount * WidthMiniBrick, HeightCount * HeightMiniBrick, oJellyfishMiniGreenBrick, id);
+                break;
+            case JellyfishBricks.Metal:
+                CreateBrick(WidthCount * WidthMiniBrick, HeightCount * HeightMiniBrick, oJellyfishMiniMetalBrick, id);
+                break;
+            case JellyfishBricks.Purple:
+                CreateBrick(WidthCount * WidthMiniBrick, HeightCount * HeightMiniBrick, oJellyfishMiniPurpleBrick, id);
+                break;
+            case JellyfishBricks.Heart:
+                CreateBrick((WidthCount * WidthMiniBrick) + WidthMiniBrick / 2, HeightCount * HeightMiniBrick, oJellyfishHeart, id);
+                break;
+        }
+        WidthCount++;
+        
+        // If the line of the map has ended
+        if WidthCount &gt; 10
+        {
+            WidthCount = 1;
+            HeightCount++;
+        }
+    }
+}
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -87,7 +142,6 @@ DebugLog(y, "Debug");
             <string>/// State control
 if BossState == "Swimming"
 {
-    speed = 1;
 }
 </string>
           </argument>

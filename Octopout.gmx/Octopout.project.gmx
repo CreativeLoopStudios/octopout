@@ -3,8 +3,31 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafiles number="1" name="Maps">
+      <datafile>
+        <name>jellyfish-boss-map.json</name>
+        <exists>-1</exists>
+        <size>2882</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>jellyfish-boss-map.json</filename>
+      </datafile>
+    </datafiles>
+  </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\aMainTrack</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\sPlayer</sprite>
@@ -42,7 +65,7 @@
   </backgrounds>
   <paths name="paths">
     <paths name="BossesPath">
-      <path>paths\JellyfishSwimmingPath</path>
+      <path>paths\pJellyfishSwimming</path>
     </paths>
   </paths>
   <scripts name="scripts">
@@ -50,6 +73,7 @@
       <script>scripts\BrickHitDetected.gml</script>
       <script>scripts\CollisionWithBall.gml</script>
       <script>scripts\SetHitsBeforeDestroy.gml</script>
+      <script>scripts\CreateBrick.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\DebugLog.gml</script>
@@ -59,6 +83,7 @@
     <scripts name="Util">
       <script>scripts\ChangeSprite.gml</script>
       <script>scripts\KeepInsideRoom.gml</script>
+      <script>scripts\ReadJsonFile.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\CreateBubble.gml</script>
@@ -75,7 +100,7 @@
   </fonts>
   <objects name="objects">
     <objects name="PhysicsObjects">
-      <object>objects\oSolid</object>
+      <object>objects\oDefaultBrick</object>
     </objects>
     <objects name="Player">
       <object>objects\oPlayer</object>
@@ -87,6 +112,7 @@
         <object>objects\oJellyfishMiniGreenBrick</object>
         <object>objects\oJellyfishMiniPurpleBrick</object>
         <object>objects\oJellyfishMiniMetalBrick</object>
+        <object>objects\oJellyfishHeart</object>
       </objects>
     </objects>
     <objects name="Particles">
