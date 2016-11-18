@@ -30,6 +30,8 @@ max_spd = 400 / room_speed;
 
 direction = 45 + random(360);
 speed = max_spd;
+
+CollisionsCountWithRectAngle = 0;
 </string>
           </argument>
         </arguments>
@@ -53,7 +55,7 @@ speed = max_spd;
           <argument>
             <kind>1</kind>
             <string>/// ball movement
-
+CreateBubble(x, y, 1);
 </string>
           </argument>
         </arguments>
@@ -83,6 +85,10 @@ if (y &lt;= sprite_height / 2 or y &gt;= room_height - (sprite_height / 2))
 if (x &lt;= sprite_width / 2 or x &gt;= room_width - (sprite_width / 2))
 {
     hspeed *= -1;
+    if direction == 0 || direction == 180
+    {
+        direction += 5;
+    }
 }
 
 </string>

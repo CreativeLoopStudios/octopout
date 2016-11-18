@@ -54,6 +54,8 @@
     <sprites name="BackgroundLife">
       <sprite>sprites\sBubble</sprite>
       <sprite>sprites\sJellyfish</sprite>
+      <sprite>sprites\sCoral</sprite>
+      <sprite>sprites\sRayo</sprite>
     </sprites>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sBall</sprite>
@@ -89,7 +91,9 @@
       <script>scripts\CreateBubble.gml</script>
     </scripts>
     <scripts name="BackgroundLife">
+      <script>scripts\GenerateMovingRandomLife.gml</script>
       <script>scripts\GenerateRandomLife.gml</script>
+      <script>scripts\StayInsideRoom.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -119,8 +123,10 @@
       <object>objects\oBubble</object>
     </objects>
     <objects name="BackgroundLife">
-      <object>objects\oBackgroundJellyfish</object>
       <object>objects\oBackgroundGenerator</object>
+      <object>objects\oBackgroundJellyfish</object>
+      <object>objects\oBackgroundCoral</object>
+      <object>objects\oBackgroundRayo</object>
     </objects>
     <object>objects\oGame</object>
     <object>objects\oBall</object>

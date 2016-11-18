@@ -32,6 +32,9 @@ global.Debug = true;
 DebugLogInitialise();
 
 randomize();
+
+// screen
+window_set_fullscreen(false);
 </string>
           </argument>
         </arguments>
