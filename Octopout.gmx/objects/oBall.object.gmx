@@ -155,7 +155,7 @@ if instance_exists(brick)
     speed = min(speed, max_spd)
     
     with brick {
-         if(CanBreak)
+        if(CanBreak)
         {
             BrickHitDetected();
         }

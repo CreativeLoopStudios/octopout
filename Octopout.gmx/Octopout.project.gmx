@@ -116,7 +116,7 @@
         <object>objects\oJellyfishMiniPurpleBrick</object>
         <object>objects\oJellyfishMiniMetalBrick</object>
         <object>objects\oJellyfishHeart</object>
-        <object>objects\oJellyfishMoviment</object>
+        <object>objects\oJellyfishMovement</object>
       </objects>
     </objects>
     <objects name="Particles">
