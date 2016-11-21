@@ -73,7 +73,6 @@
   <scripts name="scripts">
     <scripts name="Brick">
       <script>scripts\BrickHitDetected.gml</script>
-      <script>scripts\CollisionWithBall.gml</script>
       <script>scripts\SetHitsBeforeDestroy.gml</script>
       <script>scripts\CreateBrick.gml</script>
     </scripts>
@@ -117,6 +116,7 @@
         <object>objects\oJellyfishMiniPurpleBrick</object>
         <object>objects\oJellyfishMiniMetalBrick</object>
         <object>objects\oJellyfishHeart</object>
+        <object>objects\oJellyfishMoviment</object>
       </objects>
     </objects>
     <objects name="Particles">

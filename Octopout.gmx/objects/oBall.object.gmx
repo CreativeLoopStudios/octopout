@@ -26,10 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-max_spd = 400 / room_speed;
+max_spd = 800 / room_speed;
+min_spd = 400 / room_speed;
+up_spd = 25 / room_speed;
+down_spd = 0.8
 
-direction = 45 + random(360);
-speed = max_spd;
+//direction = 45 + random(360);
+direction = 275;
+speed = min_spd;
 
 CollisionsCountWithRectAngle = 0;
 </string>
@@ -112,10 +116,52 @@ if (x &lt;= sprite_width / 2 or x &gt;= room_width - (sprite_width / 2))
           <argument>
             <kind>1</kind>
             <string>/// collision with player
-if instance_exists(oPlayer) and place_meeting(x, y, oPlayer)
+
+if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
 {
-    direction = point_direction(oPlayer.x, oPlayer.y, x, y);
+    move_bounce_all(true);
+    if(abs(oPlayer.hspeed) == 0 ){
+        speed *= down_spd
+        speed = max(speed, min_spd);
+    }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// collision with brick
+var brick = instance_place(x + hspeed, y + vspeed, oDefaultBrick);
+
+if instance_exists(brick)
+{
+    move_bounce_all(true);
+    speed += up_spd;
+    speed = min(speed, max_spd)
+    
+    with brick {
+         if(CanBreak)
+        {
+            BrickHitDetected();
+        }
+    }
+} 
+
 </string>
           </argument>
         </arguments>
@@ -163,8 +209,8 @@ if global.Debug == true
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
-  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectFriction>0</PhysicsObjectFriction>
+  <PhysicsObjectAwake>0</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>

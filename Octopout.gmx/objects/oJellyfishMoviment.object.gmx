@@ -5,10 +5,10 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oDefaultBrick</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,9 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// set variables
-SetHitsBeforeDestroy();
-
+            <string>/// Movement
+if instance_exists(Parent)
+{
+    x = Parent.x + XOffset;
+    y = Parent.y + YOffset;
+}
+else
+{
+    // there is no parent
+}
 </string>
           </argument>
         </arguments>
