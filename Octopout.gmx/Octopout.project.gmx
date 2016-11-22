@@ -124,6 +124,7 @@
     </objects>
     <objects name="Particles">
       <object>objects\oBubble</object>
+      <object>objects\oBrickDust</object>
     </objects>
     <objects name="BackgroundLife">
       <object>objects\oBackgroundGenerator</object>

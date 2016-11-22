@@ -3,6 +3,7 @@ HitsBeforeDestroy -= 1;
 if HitsBeforeDestroy == 0
 {
     instance_destroy();
+    instance_create(x, y, oBrickDust);
 }
 
 if LastHitCount > HitsBeforeDestroy
