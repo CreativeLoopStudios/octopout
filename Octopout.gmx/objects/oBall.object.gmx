@@ -31,9 +31,8 @@ min_spd = 400 / room_speed;
 up_spd = 25 / room_speed;
 down_spd = 0.8
 
-//direction = 45 + random(360);
-direction = 275;
-speed = min_spd;
+State = "Hold";
+direction = random_range(20, 200);
 
 CollisionsCountWithRectAngle = 0;
 </string>
@@ -59,7 +58,27 @@ CollisionsCountWithRectAngle = 0;
           <argument>
             <kind>1</kind>
             <string>/// ball movement
-CreateBubble(x, y, 1);
+if State == "Hold"
+{
+    // stopping the ball
+    speed = 0;
+    // ball movement with player
+    if instance_exists(oPlayer)
+    {
+        x = oPlayer.x;
+    }
+    // if space is pressed, release the KRAKEN!
+    if keyboard_check_pressed(vk_space)
+    {
+        speed = min_spd;
+        State = "Move";
+    }
+}
+else if State == "Move"
+{
+    // Create bubble trail
+    CreateBubble(x, y, 1);
+}
 </string>
           </argument>
         </arguments>
@@ -81,7 +100,7 @@ CreateBubble(x, y, 1);
           <argument>
             <kind>1</kind>
             <string>/// collision
-if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= room_height - global.BorderMargin - (sprite_width / 2))
+if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= room_height)
 {
     vspeed *= -1;
     if direction == 90 or direction == 270
@@ -92,6 +111,7 @@ if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= room_height - gl
     if(y &gt;= room_height)
     {
         PlayerLoseHealth();
+        instance_destroy();
     }
 }
 
