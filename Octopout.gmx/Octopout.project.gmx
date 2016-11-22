@@ -94,6 +94,9 @@
       <script>scripts\GenerateRandomLife.gml</script>
       <script>scripts\StayInsideRoom.gml</script>
     </scripts>
+    <scripts name="Player">
+      <script>scripts\PlayerLoseHealth.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shOutline.shader</shader>
@@ -107,6 +110,7 @@
     </objects>
     <objects name="Player">
       <object>objects\oPlayer</object>
+      <object>objects\oPlayerHealth</object>
     </objects>
     <objects name="Bosses">
       <objects name="Jellyfish">
@@ -132,7 +136,9 @@
     <object>objects\oBall</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rLevel1</room>
+    <room>rooms\rJellyfishBoss</room>
+    <room>rooms\rJellyfishLevel1</room>
+    <room>rooms\rJellyfishLevel2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
