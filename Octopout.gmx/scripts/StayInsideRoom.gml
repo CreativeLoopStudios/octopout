@@ -1,4 +1,4 @@
-if x < 0 or x > room_width or y < 0 or y > room_height
+if x < global.BorderMargin or x > room_width - global.BorderMargin or y < global.BorderMargin or y > room_height - global.BorderMargin
 {
     direction += 180;
     image_angle = direction;

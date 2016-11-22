@@ -30,31 +30,31 @@ JelliesToCreateTop = irandom_range(1, 3);
 JelliesToCreateMiddle = irandom_range(1, 3);
 JelliesToCreateBottom = irandom_range(1, 3);
 
-GenerateMovingRandomLife(0, room_width, 0, 320, JelliesToCreateTop, oBackgroundJellyfish);
-GenerateMovingRandomLife(0, room_width, 320, 640, JelliesToCreateMiddle, oBackgroundJellyfish);
-GenerateMovingRandomLife(0, room_width, 640, room_height, JelliesToCreateBottom, oBackgroundJellyfish);
+GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 0, 320, JelliesToCreateTop, oBackgroundJellyfish);
+GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 320, 640, JelliesToCreateMiddle, oBackgroundJellyfish);
+GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 640, room_height - global.BorderMargin, JelliesToCreateBottom, oBackgroundJellyfish);
 
-CoralToCreateTop = irandom_range(1, 3);
-CoralToCreateMiddle = irandom_range(1, 3);
-CoralToCreateBottom = irandom_range(1, 3);
+CoralToCreate = random_range(1, 30);
 
-GenerateRandomLife(-5, 0, 0, 320, CoralToCreateTop, oBackgroundCoral, 0);
-GenerateRandomLife(-5, 0, 320, 640, CoralToCreateMiddle, oBackgroundCoral, 0);
-GenerateRandomLife(-5, 0, 640, room_height, CoralToCreateBottom, oBackgroundCoral, 0);
-
-GenerateRandomLife(room_width, room_width + 5, 0, 320, CoralToCreateTop, oBackgroundCoral, 360);
-GenerateRandomLife(room_width, room_width + 5, 320, 640, CoralToCreateMiddle, oBackgroundCoral, 360);
-GenerateRandomLife(room_width, room_width + 5, 640, room_height, CoralToCreateBottom, oBackgroundCoral, 180);
+for(var i = 0; i &lt; CoralToCreate; i += 1)
+{
+    var RandX = random_range(global.BorderMargin, room_width - global.BorderMargin);
+    var Y = room_height - 30;
+    if not(place_meeting(RandX, Y, oBackgroundCoral))
+    {
+        var life = instance_create(RandX, Y, oBackgroundCoral);
+    }
+}
 
 RayoToCreateTop = irandom_range(1, 3);
 RayoToCreateMiddle = irandom_range(1, 3);
 RayoToCreateBottom = irandom_range(1, 3);
 
-GenerateMovingRandomLife(0, room_width, 0, 320, RayoToCreateTop, oBackgroundRayo);
-GenerateMovingRandomLife(0, room_width, 320, 640, RayoToCreateMiddle, oBackgroundRayo);
-GenerateMovingRandomLife(0, room_width, 640, room_height, RayoToCreateBottom, oBackgroundRayo);
+GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 0, 320, RayoToCreateTop, oBackgroundRayo);
+GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 320, 640, RayoToCreateMiddle, oBackgroundRayo);
+GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 640, room_height - global.BorderMargin, RayoToCreateBottom, oBackgroundRayo);
 
-CreateBubble(random_range(21, room_width - 21), random_range(21, room_height - 21), 10);
+CreateBubble(random_range(global.BorderMargin, room_width - global.BorderMargin), random_range(global.BorderMargin, room_height - global.BorderMargin), 10);
 alarm[0] = 5;
 </string>
           </argument>

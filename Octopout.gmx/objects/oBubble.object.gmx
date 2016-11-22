@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// create particle system
 bubble_system = part_system_create();
-part_system_depth(bubble_system, 10);
+part_system_depth(bubble_system, 20);
 
 // Particle
 particle = part_type_create();

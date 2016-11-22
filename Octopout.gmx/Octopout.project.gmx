@@ -91,7 +91,6 @@
     </scripts>
     <scripts name="BackgroundLife">
       <script>scripts\GenerateMovingRandomLife.gml</script>
-      <script>scripts\GenerateRandomLife.gml</script>
       <script>scripts\StayInsideRoom.gml</script>
     </scripts>
     <scripts name="Player">

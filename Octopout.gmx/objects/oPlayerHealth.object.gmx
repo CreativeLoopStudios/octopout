@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -56,7 +56,7 @@ MarginY = 41;
 var DrawX = MarginX;
 repeat(health)
 {
-    draw_sprite_ext(sBall, 0, DrawX, MarginY, 1, 1, image_angle, c_red, 0.5);
+    draw_sprite_ext(sBall, 0, DrawX, MarginY, 1.5, 1.5, image_angle, c_red, image_alpha);
     DrawX += 20;
 }
 </string>
