@@ -54,7 +54,7 @@ GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 
 GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 320, 640, RayoToCreateMiddle, oBackgroundRayo);
 GenerateMovingRandomLife(global.BorderMargin, room_width - global.BorderMargin, 640, room_height - global.BorderMargin, RayoToCreateBottom, oBackgroundRayo);
 
-CreateBubble(random_range(global.BorderMargin, room_width - global.BorderMargin), random_range(global.BorderMargin, room_height - global.BorderMargin), 10);
+CreateParticle(random_range(global.BorderMargin, room_width - global.BorderMargin), random_range(global.BorderMargin, room_height - global.BorderMargin), 10, oBubble);
 alarm[0] = 5;
 </string>
           </argument>
@@ -78,7 +78,7 @@ alarm[0] = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>CreateBubble(random_range(21, room_width - 21), random_range(21, room_height - 21), 3);
+            <string>CreateParticle(random_range(21, room_width - 21), random_range(21, room_height - 21), 3, oBubble);
 alarm[0] = 5;
 </string>
           </argument>

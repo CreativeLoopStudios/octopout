@@ -29,10 +29,10 @@
     <sound>sound\aMainTrack</sound>
   </sounds>
   <sprites name="sprites">
-    <sprites name="Player">
-      <sprite>sprites\sPlayer</sprite>
-      <sprite>sprites\sPlayerRight</sprite>
-      <sprite>sprites\sPlayerLeft</sprite>
+    <sprites name="BackgroundLife">
+      <sprite>sprites\sJellyfish</sprite>
+      <sprite>sprites\sCoral</sprite>
+      <sprite>sprites\sRayo</sprite>
     </sprites>
     <sprites name="Bricks">
       <sprite>sprites\sBrickGlass</sprite>
@@ -51,16 +51,19 @@
       <sprite>sprites\sMiniBrickPurple</sprite>
       <sprite>sprites\sMiniBrickBomb</sprite>
     </sprites>
-    <sprites name="BackgroundLife">
+    <sprites name="Particles">
       <sprite>sprites\sBubble</sprite>
-      <sprite>sprites\sJellyfish</sprite>
-      <sprite>sprites\sCoral</sprite>
-      <sprite>sprites\sRayo</sprite>
+      <sprite>sprites\sDust</sprite>
     </sprites>
-    <sprite>sprites\sExplosion</sprite>
+    <sprites name="Player">
+      <sprite>sprites\sPlayer</sprite>
+      <sprite>sprites\sPlayerRight</sprite>
+      <sprite>sprites\sPlayerLeft</sprite>
+    </sprites>
     <sprite>sprites\sBall</sprite>
-    <sprite>sprites\sHeartBrick</sprite>
     <sprite>sprites\sDebugRect</sprite>
+    <sprite>sprites\sExplosion</sprite>
+    <sprite>sprites\sHeartBrick</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgSea</background>
@@ -87,7 +90,7 @@
       <script>scripts\ReadJsonFile.gml</script>
     </scripts>
     <scripts name="Particles">
-      <script>scripts\CreateBubble.gml</script>
+      <script>scripts\CreateParticle.gml</script>
     </scripts>
     <scripts name="BackgroundLife">
       <script>scripts\GenerateMovingRandomLife.gml</script>
