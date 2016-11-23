@@ -11,10 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>/// set global objects
-instance_create(0, 0, oGame);
-instance_create(0, 0, oBackgroundGenerator);
-instance_create(0, 0, oJellyfishManager);
-instance_create(0, 0, oPlayerHealth);</code>
+InitialiseRoom();</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

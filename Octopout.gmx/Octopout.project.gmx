@@ -74,6 +74,10 @@
     </paths>
   </paths>
   <scripts name="scripts">
+    <scripts name="BackgroundLife">
+      <script>scripts\GenerateMovingRandomLife.gml</script>
+      <script>scripts\StayInsideRoom.gml</script>
+    </scripts>
     <scripts name="Brick">
       <script>scripts\BrickHitDetected.gml</script>
       <script>scripts\SetHitsBeforeDestroy.gml</script>
@@ -84,20 +88,17 @@
       <script>scripts\DebugLogDraw.gml</script>
       <script>scripts\DebugLogInitialise.gml</script>
     </scripts>
+    <scripts name="Particles">
+      <script>scripts\CreateParticle.gml</script>
+    </scripts>
+    <scripts name="Player">
+      <script>scripts\PlayerLoseHealth.gml</script>
+    </scripts>
     <scripts name="Util">
       <script>scripts\ChangeSprite.gml</script>
       <script>scripts\KeepInsideRoom.gml</script>
       <script>scripts\ReadJsonFile.gml</script>
-    </scripts>
-    <scripts name="Particles">
-      <script>scripts\CreateParticle.gml</script>
-    </scripts>
-    <scripts name="BackgroundLife">
-      <script>scripts\GenerateMovingRandomLife.gml</script>
-      <script>scripts\StayInsideRoom.gml</script>
-    </scripts>
-    <scripts name="Player">
-      <script>scripts\PlayerLoseHealth.gml</script>
+      <script>scripts\InitialiseRoom.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -107,12 +108,11 @@
     <font>fonts\fDebug</font>
   </fonts>
   <objects name="objects">
-    <objects name="PhysicsObjects">
-      <object>objects\oDefaultBrick</object>
-    </objects>
-    <objects name="Player">
-      <object>objects\oPlayer</object>
-      <object>objects\oPlayerHealth</object>
+    <objects name="BackgroundLife">
+      <object>objects\oBackgroundGenerator</object>
+      <object>objects\oBackgroundJellyfish</object>
+      <object>objects\oBackgroundCoral</object>
+      <object>objects\oBackgroundRayo</object>
     </objects>
     <objects name="Bosses">
       <objects name="Jellyfish">
@@ -125,18 +125,22 @@
         <object>objects\oJellyfishMovement</object>
       </objects>
     </objects>
+    <objects name="Debug">
+      <object>objects\oFPS</object>
+    </objects>
+    <object>objects\oBall</object>
+    <object>objects\oGame</object>
     <objects name="Particles">
       <object>objects\oBubble</object>
       <object>objects\oBrickDust</object>
     </objects>
-    <objects name="BackgroundLife">
-      <object>objects\oBackgroundGenerator</object>
-      <object>objects\oBackgroundJellyfish</object>
-      <object>objects\oBackgroundCoral</object>
-      <object>objects\oBackgroundRayo</object>
+    <objects name="PhysicsObjects">
+      <object>objects\oDefaultBrick</object>
     </objects>
-    <object>objects\oGame</object>
-    <object>objects\oBall</object>
+    <objects name="Player">
+      <object>objects\oPlayer</object>
+      <object>objects\oPlayerHealth</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rJellyfishBoss</room>
