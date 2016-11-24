@@ -27,6 +27,7 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\aMainTrack</sound>
+    <sound>sound\aStartTrack</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="BackgroundLife">
@@ -41,6 +42,9 @@
       <sprite>sprites\sBrickWall</sprite>
       <sprite>sprites\sBrickSand</sprite>
       <sprite>sprites\sBrickPurple</sprite>
+    </sprites>
+    <sprites name="Menu">
+      <sprite>sprites\sLogo</sprite>
     </sprites>
     <sprites name="MiniBricks">
       <sprite>sprites\sMiniBrickGlass</sprite>
@@ -96,10 +100,12 @@
       <script>scripts\PlayerLoseHealth.gml</script>
     </scripts>
     <scripts name="Util">
+      <script>scripts\ButtonPressed.gml</script>
       <script>scripts\ChangeSprite.gml</script>
+      <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
+      <script>scripts\InitialiseRoom.gml</script>
       <script>scripts\KeepInsideRoom.gml</script>
       <script>scripts\ReadJsonFile.gml</script>
-      <script>scripts\InitialiseRoom.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -107,6 +113,7 @@
   </shaders>
   <fonts name="fonts">
     <font>fonts\fDebug</font>
+    <font>fonts\fMenu</font>
   </fonts>
   <objects name="objects">
     <objects name="BackgroundLife">
@@ -129,6 +136,9 @@
     <objects name="Debug">
       <object>objects\oFPS</object>
     </objects>
+    <objects name="Menu">
+      <object>objects\oMenu</object>
+    </objects>
     <object>objects\oBall</object>
     <object>objects\oGame</object>
     <objects name="Particules">
@@ -142,7 +152,9 @@
       <object>objects\oPlayerHealth</object>
     </objects>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
+    <room>rooms\rStartMenu</room>
     <room>rooms\rJellyfishBoss</room>
     <room>rooms\rJellyfishLevel1</room>
     <room>rooms\rJellyfishLevel2</room>
