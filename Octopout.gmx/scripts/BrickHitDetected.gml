@@ -3,7 +3,7 @@ HitsBeforeDestroy -= 1;
 if HitsBeforeDestroy == 0
 {
     instance_destroy();
-    CreateParticle(x, y, 5, oBrickDust);
+    part_particles_create(global.ParticulesSystem, x, y, global.BrickDustParticule, 5);
 }
 
 if LastHitCount > HitsBeforeDestroy

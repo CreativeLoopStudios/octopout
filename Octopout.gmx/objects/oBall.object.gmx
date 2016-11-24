@@ -77,7 +77,7 @@ if State == "Hold"
 else if State == "Move"
 {
     // Create bubble trail
-    CreateParticle(x, y, 1, oBubble);
+    part_particles_create(global.ParticulesSystem, x, y, global.BubbleParticle, 1);
 }
 </string>
           </argument>
@@ -111,7 +111,7 @@ if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= room_height)
     if(y &gt;= room_height)
     {
         PlayerLoseHealth();
-        instance_destroy();
+        //instance_destroy();
     }
 }
 

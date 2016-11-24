@@ -12,4 +12,4 @@ while !file_text_eof(JsonFile)
 
 file_text_close(JsonFile);
 
-return json_decode(str);
+return str;

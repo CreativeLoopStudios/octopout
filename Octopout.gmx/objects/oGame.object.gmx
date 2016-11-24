@@ -82,6 +82,8 @@ audio_play_sound(aMainTrack, 1, true);
             <kind>1</kind>
             <string>/// set global variables
 global.BorderMargin = 21;
+
+
 </string>
           </argument>
         </arguments>

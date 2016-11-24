@@ -77,9 +77,9 @@ if (right_pressed or gamepad_horizontal_right_pressed)
     hspeed += accel;
     hspeed = min(hspeed, max_spd);
     ChangeSprite(sPlayerRight, AnimationSpeed);
-    CreateParticle(x, random_range(y, y - (sprite_width / 2)), NumberOfBubblesWhenMoving, oBubble);
-    CreateParticle(x, y, NumberOfBubblesWhenMoving, oBubble);
-    CreateParticle(x, random_range(y, y + (sprite_width / 2)), NumberOfBubblesWhenMoving, oBubble);
+    part_particles_create(global.ParticulesSystem, x, random_range(y, y - (sprite_width / 2)), global.BubbleParticle, NumberOfBubblesWhenMoving);
+    part_particles_create(global.ParticulesSystem, x, y, global.BubbleParticle, NumberOfBubblesWhenMoving);
+    part_particles_create(global.ParticulesSystem, x, random_range(y, y + (sprite_width / 2)), global.BubbleParticle, NumberOfBubblesWhenMoving);
 }
 
 // If left is pressed accelerate hspeed in the left direction
@@ -87,9 +87,9 @@ if(left_pressed or gamepad_horizontal_left_pressed) {
     hspeed -= accel;
     hspeed = max(hspeed, -max_spd);
     ChangeSprite(sPlayerLeft, AnimationSpeed);
-    CreateParticle(x, random_range(y, y - (sprite_width / 2)), NumberOfBubblesWhenMoving, oBubble);
-    CreateParticle(x, y, NumberOfBubblesWhenMoving, oBubble);
-    CreateParticle(x, random_range(y, y + (sprite_width / 2)), NumberOfBubblesWhenMoving, oBubble);
+    part_particles_create(global.ParticulesSystem, x, random_range(y, y - (sprite_width / 2)), global.BubbleParticle, NumberOfBubblesWhenMoving);
+    part_particles_create(global.ParticulesSystem, x, y, global.BubbleParticle, NumberOfBubblesWhenMoving);
+    part_particles_create(global.ParticulesSystem, x, random_range(y, y + (sprite_width / 2)), global.BubbleParticle, NumberOfBubblesWhenMoving);
 }
 
 if(left_right_pressed_or_not and gamepad_pressed_or_not) {

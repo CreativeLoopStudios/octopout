@@ -89,7 +89,8 @@
       <script>scripts\DebugLogInitialise.gml</script>
     </scripts>
     <scripts name="Particles">
-      <script>scripts\CreateParticle.gml</script>
+      <script>scripts\BubbleParticuleInit.gml</script>
+      <script>scripts\BrickDustParticuleInit.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\PlayerLoseHealth.gml</script>
@@ -130,9 +131,8 @@
     </objects>
     <object>objects\oBall</object>
     <object>objects\oGame</object>
-    <objects name="Particles">
-      <object>objects\oBubble</object>
-      <object>objects\oBrickDust</object>
+    <objects name="Particules">
+      <object>objects\oParticules</object>
     </objects>
     <objects name="PhysicsObjects">
       <object>objects\oDefaultBrick</object>

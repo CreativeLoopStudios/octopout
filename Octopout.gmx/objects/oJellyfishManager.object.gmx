@@ -68,7 +68,10 @@ var HeightMiniBrick = sprite_get_height(object_get_sprite(oJellyfishMiniGlassBri
 var WidthHeart = sprite_get_width(object_get_sprite(oJellyfishHeart));
 var HeightHeart = sprite_get_height(object_get_sprite(oJellyfishHeart));
 
-var JsonFile = ReadJsonFile("jellyfish-boss-map.json");
+var a = ReadJsonFile("jellyfish-boss-map.json");
+
+var JsonFile = json_decode(a);
+
 var DefaultList = ds_map_find_value(JsonFile, "default");
 
 for(var i = 0; i &lt; 1; i++)
@@ -121,7 +124,11 @@ for(var i = 0; i &lt; 1; i++)
             HeightCount++;
         }
     }
+    ds_list_destroy(Tile);
 }
+
+ds_list_destroy(DefaultList);
+ds_map_destroy(JsonFile);
 
 
 
