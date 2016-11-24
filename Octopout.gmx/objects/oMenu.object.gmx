@@ -63,6 +63,7 @@
     draw_set_font(fMenu);
     if(ButtonPressed("Start Game"))
     {
+        audio_stop_sound(global.musicMenu);
         room_goto(rJellyfishBoss);
     }
     

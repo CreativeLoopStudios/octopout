@@ -12,5 +12,5 @@ if (Height > 0) HalfHeight = Height / 2;
 var XLeft = x - HalfWidth;
 var XRight = x + HalfWidth;
 
-x = clamp(x, HalfWidth, room_width - HalfWidth);
+x = clamp(x, HalfWidth + global.BorderMargin, room_width - HalfWidth - global.BorderMargin);
 y = clamp(y, HalfHeight, room_height - HalfHeight);

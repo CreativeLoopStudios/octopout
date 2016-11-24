@@ -14,7 +14,7 @@
 instance_create(0, 0, oMenu);
 
 // set main music
-audio_play_sound(aStartTrack, 1, true);</code>
+global.musicMenu = audio_play_sound(aStartTrack, 1, true);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
