@@ -71,6 +71,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bgSea</background>
+    <background>background\bgMenu</background>
   </backgrounds>
   <paths name="paths">
     <paths name="BossesPath">
@@ -92,6 +93,11 @@
       <script>scripts\DebugLogDraw.gml</script>
       <script>scripts\DebugLogInitialise.gml</script>
     </scripts>
+    <scripts name="Menu">
+      <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
+      <script>scripts\ButtonPressed.gml</script>
+      <script>scripts\CheckIfPaused.gml</script>
+    </scripts>
     <scripts name="Particles">
       <script>scripts\BubbleParticuleInit.gml</script>
       <script>scripts\BrickDustParticuleInit.gml</script>
@@ -99,18 +105,16 @@
     <scripts name="Player">
       <script>scripts\PlayerLoseHealth.gml</script>
     </scripts>
+    <scripts name="Sound">
+      <script>scripts\PlaySoundtrack.gml</script>
+    </scripts>
     <scripts name="Util">
-      <script>scripts\ButtonPressed.gml</script>
       <script>scripts\ChangeSprite.gml</script>
-      <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
       <script>scripts\InitialiseRoom.gml</script>
       <script>scripts\KeepInsideRoom.gml</script>
       <script>scripts\ReadJsonFile.gml</script>
     </scripts>
   </scripts>
-  <shaders name="shaders">
-    <shader type="GLSLES">shaders\shOutline.shader</shader>
-  </shaders>
   <fonts name="fonts">
     <font>fonts\fDebug</font>
     <font>fonts\fMenu</font>
@@ -137,7 +141,8 @@
       <object>objects\oFPS</object>
     </objects>
     <objects name="Menu">
-      <object>objects\oMenu</object>
+      <object>objects\oStartMenu</object>
+      <object>objects\oPauseMenu</object>
     </objects>
     <object>objects\oBall</object>
     <object>objects\oGame</object>
@@ -150,6 +155,9 @@
     <objects name="Player">
       <object>objects\oPlayer</object>
       <object>objects\oPlayerHealth</object>
+    </objects>
+    <objects name="Shader">
+      <object>objects\oWater</object>
     </objects>
   </objects>
   <rooms name="rooms">

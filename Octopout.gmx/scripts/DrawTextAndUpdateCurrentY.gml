@@ -1,3 +1,4 @@
+/// DrawTextAndUpdateCurrentY(text, x)
 var TextToDraw = argument0;
 var X = argument1;
 
