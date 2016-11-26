@@ -48,34 +48,34 @@
   </sounds>
   <sprites name="sprites">
     <sprites name="BackgroundLife">
-      <sprite>sprites\sJellyfish</sprite>
       <sprite>sprites\sCoral</sprite>
+      <sprite>sprites\sJellyfish</sprite>
       <sprite>sprites\sRayo</sprite>
     </sprites>
     <sprites name="Ball">
       <sprite>sprites\sBall</sprite>
-      <sprite>sprites\sConstructingBall</sprite>
       <sprite>sprites\sBlackBall</sprite>
+      <sprite>sprites\sConstructingBall</sprite>
     </sprites>
     <sprites name="Bricks">
       <sprite>sprites\sBrickGlass</sprite>
       <sprite>sprites\sBrickGreen</sprite>
       <sprite>sprites\sBrickMetal</sprite>
-      <sprite>sprites\sBrickWall</sprite>
-      <sprite>sprites\sBrickSand</sprite>
       <sprite>sprites\sBrickPurple</sprite>
+      <sprite>sprites\sBrickSand</sprite>
+      <sprite>sprites\sBrickWall</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\sLogo</sprite>
     </sprites>
     <sprites name="MiniBricks">
+      <sprite>sprites\sMiniBrickBomb</sprite>
       <sprite>sprites\sMiniBrickGlass</sprite>
       <sprite>sprites\sMiniBrickGreen</sprite>
       <sprite>sprites\sMiniBrickMetal</sprite>
-      <sprite>sprites\sMiniBrickWall</sprite>
-      <sprite>sprites\sMiniBrickSand</sprite>
       <sprite>sprites\sMiniBrickPurple</sprite>
-      <sprite>sprites\sMiniBrickBomb</sprite>
+      <sprite>sprites\sMiniBrickSand</sprite>
+      <sprite>sprites\sMiniBrickWall</sprite>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\sBubble</sprite>
@@ -83,8 +83,8 @@
     </sprites>
     <sprites name="Player">
       <sprite>sprites\sPlayer</sprite>
-      <sprite>sprites\sPlayerRight</sprite>
       <sprite>sprites\sPlayerLeft</sprite>
+      <sprite>sprites\sPlayerRight</sprite>
     </sprites>
     <sprite>sprites\sDebugRect</sprite>
     <sprite>sprites\sExplosion</sprite>
@@ -107,8 +107,8 @@
     </scripts>
     <scripts name="Brick">
       <script>scripts\BrickHitDetected.gml</script>
-      <script>scripts\SetHitsBeforeDestroy.gml</script>
       <script>scripts\CreateBrick.gml</script>
+      <script>scripts\SetHitsBeforeDestroy.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\DebugLog.gml</script>
@@ -116,13 +116,13 @@
       <script>scripts\DebugLogInitialise.gml</script>
     </scripts>
     <scripts name="Menu">
-      <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
       <script>scripts\ButtonPressed.gml</script>
       <script>scripts\CheckIfPaused.gml</script>
+      <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
     </scripts>
     <scripts name="Particles">
-      <script>scripts\BubbleParticuleInit.gml</script>
       <script>scripts\BrickDustParticuleInit.gml</script>
+      <script>scripts\BubbleParticuleInit.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\PlayerLoseHealth.gml</script>
@@ -138,8 +138,8 @@
       <script>scripts\ScreenSettings.gml</script>
     </scripts>
     <scripts name="Enemies">
-      <script>scripts\SetEnumBricks.gml</script>
       <script>scripts\GenerateEnemyFromJson.gml</script>
+      <script>scripts\SetEnumBricks.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -149,8 +149,8 @@
   <objects name="objects">
     <objects name="BackgroundLife">
       <object>objects\oBackgroundGenerator</object>
-      <object>objects\oBackgroundJellyfish</object>
       <object>objects\oBackgroundCoral</object>
+      <object>objects\oBackgroundJellyfish</object>
       <object>objects\oBackgroundRayo</object>
     </objects>
     <objects name="Debug">
@@ -171,9 +171,9 @@
       <object>objects\oJellyfishMovement</object>
     </objects>
     <objects name="Menu">
-      <object>objects\oStartMenu</object>
-      <object>objects\oPauseMenu</object>
       <object>objects\oLogo</object>
+      <object>objects\oPauseMenu</object>
+      <object>objects\oStartMenu</object>
     </objects>
     <object>objects\oBall</object>
     <object>objects\oGame</object>
