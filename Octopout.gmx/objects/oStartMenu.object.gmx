@@ -31,8 +31,8 @@ y = 0;
 CurrentY = (sprite_get_height(sLogo) / 2);
 
 // generate start menu
-//draw_sprite_ext(sLogo, 0, x, CurrentY, 0.8, 0.8, image_angle, image_blend, image_alpha);
-instance_create(x, CurrentY, oLogo);
+draw_sprite_ext(sLogo, 0, x, CurrentY, 0.8, 0.8, image_angle, image_blend, image_alpha);
+//instance_create(x, CurrentY, oLogo);
 
 Margin = 10;
 CurrentY += 300;
