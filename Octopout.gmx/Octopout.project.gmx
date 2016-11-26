@@ -35,6 +35,11 @@
       <sprite>sprites\sCoral</sprite>
       <sprite>sprites\sRayo</sprite>
     </sprites>
+    <sprites name="Ball">
+      <sprite>sprites\sBall</sprite>
+      <sprite>sprites\sConstructingBall</sprite>
+      <sprite>sprites\sBlackBall</sprite>
+    </sprites>
     <sprites name="Bricks">
       <sprite>sprites\sBrickGlass</sprite>
       <sprite>sprites\sBrickGreen</sprite>
@@ -64,7 +69,6 @@
       <sprite>sprites\sPlayerRight</sprite>
       <sprite>sprites\sPlayerLeft</sprite>
     </sprites>
-    <sprite>sprites\sBall</sprite>
     <sprite>sprites\sDebugRect</sprite>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sHeartBrick</sprite>
