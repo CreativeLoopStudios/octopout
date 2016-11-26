@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -34,7 +34,8 @@ down_spd = 0.8
 State = "Hold";
 
 // black ball power up
-NumberOfTimesToCreateBlackBall = 3;
+NumberOfTimesToCreateBlackBall = 1;
+CountToCreateBlackBall = 0;
 
 IsSpriteChanged = true;
 </string>
@@ -73,10 +74,10 @@ if State == "Hold"
     if keyboard_check_pressed(vk_space)
     {
         speed = min_spd;
-        State = "Move";
+        State = "NormalBall";
     }
 }
-else if State == "Move"
+else if State == "NormalBall"
 {
     // Create bubble trail
     part_particles_create(global.ParticulesSystem, x, y, global.BubbleParticle, 1);
@@ -170,7 +171,7 @@ if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
     move_bounce_all(true);
     if State != "BlackBall"
     {
-        NumberOfTimesToCreateBlackBall -= 1;
+        CountToCreateBlackBall += 1;
     }
     if(abs(oPlayer.hspeed) == 0 ){
         speed *= down_spd
@@ -198,10 +199,14 @@ if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
           <argument>
             <kind>1</kind>
             <string>/// create black ball
-if NumberOfTimesToCreateBlackBall == 0
+if CountToCreateBlackBall == NumberOfTimesToCreateBlackBall
 {
     State = "BlackBall";
     IsSpriteChanged = true;
+    if instance_exists(oPlayer)
+    {
+        oPlayer.State = "BlackSplash";
+    }
 }
 </string>
           </argument>
@@ -248,10 +253,19 @@ if instance_exists(brick)
     speed += up_spd;
     speed = min(speed, max_spd)
     
-    with brick {
-        if(CanBreak)
-        {
-            BrickHitDetected();
+    if State == "BlackBall"
+    {
+        instance_create(x, y, oExplosionBlackBall);
+        State = "NormalBall";
+        IsSpriteChanged = true;
+    }
+    else
+    {
+        with brick {
+            if(CanBreak)
+            {
+                BrickHitDetected();
+            }
         }
     }
 }
@@ -281,8 +295,8 @@ if IsSpriteChanged
     if State == "BlackBall"
     {
         sprite_index = sBlackBall;
-        NumberOfTimesToCreateBlackBall = 3;
-        image_speed = 0;
+        CountToCreateBlackBall = 0;
+        image_speed = 0.2;
     }
     else
     {

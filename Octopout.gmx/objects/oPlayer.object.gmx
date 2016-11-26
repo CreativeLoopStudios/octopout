@@ -36,6 +36,8 @@ init_width = sprite_width;
 init_height = sprite_height;
 
 NumberOfBubblesWhenMoving = 2;
+
+State = "Moving";
 </string>
           </argument>
         </arguments>
@@ -116,6 +118,35 @@ if(left_right_pressed_or_not and gamepad_pressed_or_not) {
 }
 
 KeepInsideRoom(sprite_width, hspeed);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// state control
+if State == "BlackSplash"
+{
+    BlackSplash = instance_create(x, y - (sprite_height / 2) - 20, oBlackSplash);
+    BlackSplash.Parent = id;
+    BlackSplash.XOffset = BlackSplash.x;
+    BlackSplash.YOffset = BlackSplash.y;
+    State = "Moving";
+}
 </string>
           </argument>
         </arguments>
