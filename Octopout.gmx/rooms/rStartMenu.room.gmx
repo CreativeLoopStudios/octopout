@@ -11,6 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>/// set global objects
+ScreenSettings();
 instance_create(0, 0, oStartMenu);
 
 // set main music

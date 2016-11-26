@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles">
-    <datafiles number="1" name="Maps">
+  <datafiles number="2" name="datafiles">
+    <datafiles number="2" name="Maps">
       <datafile>
         <name>jellyfish-boss-map.json</name>
         <exists>-1</exists>
@@ -21,6 +21,23 @@
           </Config>
         </ConfigOptions>
         <filename>jellyfish-boss-map.json</filename>
+      </datafile>
+      <datafile>
+        <name>jellyfish-mini-map.json</name>
+        <exists>-1</exists>
+        <size>271</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>jellyfish-mini-map.json</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -117,6 +134,11 @@
       <script>scripts\InitialiseRoom.gml</script>
       <script>scripts\KeepInsideRoom.gml</script>
       <script>scripts\ReadJsonFile.gml</script>
+      <script>scripts\ScreenSettings.gml</script>
+    </scripts>
+    <scripts name="Enemies">
+      <script>scripts\SetEnumBricks.gml</script>
+      <script>scripts\GenerateEnemyFromJson.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -130,19 +152,22 @@
       <object>objects\oBackgroundCoral</object>
       <object>objects\oBackgroundRayo</object>
     </objects>
-    <objects name="Bosses">
-      <objects name="Jellyfish">
-        <object>objects\oJellyfishManager</object>
-        <object>objects\oJellyfishMiniGlassBrick</object>
-        <object>objects\oJellyfishMiniGreenBrick</object>
-        <object>objects\oJellyfishMiniPurpleBrick</object>
-        <object>objects\oJellyfishMiniMetalBrick</object>
-        <object>objects\oJellyfishHeart</object>
-        <object>objects\oJellyfishMovement</object>
-      </objects>
-    </objects>
     <objects name="Debug">
       <object>objects\oFPS</object>
+    </objects>
+    <objects name="Enemies">
+      <objects name="Bricks">
+        <object>objects\oHeartBrick</object>
+        <object>objects\oMiniGlassBrick</object>
+        <object>objects\oMiniGreenBrick</object>
+        <object>objects\oMiniMetalBrick</object>
+        <object>objects\oMiniPurpleBrick</object>
+      </objects>
+      <objects name="Jellyfish">
+        <object>objects\oJellyfishBossManager</object>
+        <object>objects\oJellyfishMiniManager</object>
+      </objects>
+      <object>objects\oJellyfishMovement</object>
     </objects>
     <objects name="Menu">
       <object>objects\oStartMenu</object>
@@ -165,9 +190,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rJellyfishLevel1</room>
     <room>rooms\rStartMenu</room>
     <room>rooms\rJellyfishBoss</room>
-    <room>rooms\rJellyfishLevel1</room>
     <room>rooms\rJellyfishLevel2</room>
   </rooms>
   <help>

@@ -13,6 +13,9 @@
   <code>/// set global objects
 InitialiseRoom();
 
+//  enemies
+instance_create(0, 0, oJellyfishBossManager);
+
 // set main music
 PlaySoundtrack(aMainTrack);</code>
   <enableViews>0</enableViews>

@@ -26,12 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-x = room_width / 2;
-y = 300;
+x = room_width / 3;
+y = 250;
 
 BossState = "Swimming";
-
-path_start(pJellyfishSwimming, 3, path_action_continue, false);
 </string>
           </argument>
         </arguments>
@@ -52,83 +50,25 @@ path_start(pJellyfishSwimming, 3, path_action_continue, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// create bricks of the boss
-// glass bricks
-enum JellyfishBricks {
-    Glass = 1,
-    Green = 2,
-    Metal = 3,
-    Purple = 4,
-    Heart = 5
-}
+            <string>/// create bricks of the mini jellyfish
+SetEnumBricks();
 
-var WidthMiniBrick = sprite_get_width(object_get_sprite(oJellyfishMiniGlassBrick));
-var HeightMiniBrick = sprite_get_height(object_get_sprite(oJellyfishMiniGlassBrick));
+var file = ReadJsonFile("jellyfish-mini-map.json");
 
-var WidthHeart = sprite_get_width(object_get_sprite(oJellyfishHeart));
-var HeightHeart = sprite_get_height(object_get_sprite(oJellyfishHeart));
+var JellyfishMiniFile = json_decode(file);
 
-var a = ReadJsonFile("jellyfish-boss-map.json");
+GenerateEnemyFromJson(JellyfishMiniFile);
 
-var JsonFile = json_decode(a);
+x += x;
 
-var DefaultList = ds_map_find_value(JsonFile, "default");
+//GenerateEnemyFromJson(JellyfishMiniFile);
 
-for(var i = 0; i &lt; 1; i++)
-{
-    var JsonObj = ds_list_find_value(DefaultList, i);
-    var CountTilesXBoss = JsonObj[? "width"];
-    var CountTilesYBoss = JsonObj[? "height"];
-    
-    var WidthBoss = CountTilesXBoss * WidthMiniBrick;
-    var HeightBoss = CountTilesYBoss * HeightMiniBrick;
-    
-    var CurrentX = (WidthBoss / 2) * -1;
-    var CurrentY = (HeightBoss / 2) * -1;
-    
-    var WidthCount = 1;
-    var HeightCount = 1;
-    
-    var BossMap = JsonObj[? "map"];
-    var Size = ds_list_size(BossMap);
-    for(var j = 0; j &lt; Size; j++)
-    {
-        var Tile = ds_list_find_value(BossMap, j);
-        switch (Tile)
-        {
-            case JellyfishBricks.Glass:
-                CreateBrick(CurrentX, CurrentY, oJellyfishMiniGlassBrick, id);
-                break;
-            case JellyfishBricks.Green:
-                CreateBrick(CurrentX, CurrentY, oJellyfishMiniGreenBrick, id);
-                break;
-            case JellyfishBricks.Metal:
-                CreateBrick(CurrentX, CurrentY, oJellyfishMiniMetalBrick, id);
-                break;
-            case JellyfishBricks.Purple:
-                CreateBrick(CurrentX, CurrentY, oJellyfishMiniPurpleBrick, id);
-                break;
-            case JellyfishBricks.Heart:
-                CreateBrick((CurrentX) + WidthMiniBrick / 2, CurrentY, oJellyfishHeart, id);
-                break;
-        }
-        CurrentX += WidthMiniBrick;
-        WidthCount++;
-        
-        // If the line of the map has ended
-        if WidthCount &gt; 10
-        {
-            WidthCount = 1;
-            CurrentX = (WidthBoss / 2) * -1;
-            CurrentY += HeightMiniBrick;
-            HeightCount++;
-        }
-    }
-    ds_list_destroy(Tile);
-}
+x += x;
+
+//GenerateEnemyFromJson(JellyfishMiniFile);
 
 ds_list_destroy(DefaultList);
-ds_map_destroy(JsonFile);
+ds_map_destroy(JellyfishMiniFile);
 
 
 

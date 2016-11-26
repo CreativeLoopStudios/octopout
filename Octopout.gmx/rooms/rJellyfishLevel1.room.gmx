@@ -11,7 +11,10 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>/// set global objects
-InitialiseRoom();</code>
+InitialiseRoom();
+
+// enemies
+instance_create(0, 0, oJellyfishMiniManager);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
