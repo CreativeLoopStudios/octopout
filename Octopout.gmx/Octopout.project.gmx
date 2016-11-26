@@ -173,6 +173,7 @@
     <objects name="Menu">
       <object>objects\oStartMenu</object>
       <object>objects\oPauseMenu</object>
+      <object>objects\oLogo</object>
     </objects>
     <object>objects\oBall</object>
     <object>objects\oGame</object>
@@ -193,8 +194,8 @@
   <rooms name="rooms">
     <room>rooms\rStartMenu</room>
     <room>rooms\rJellyfishLevel1</room>
-    <room>rooms\rJellyfishBoss</room>
     <room>rooms\rJellyfishLevel2</room>
+    <room>rooms\rJellyfishBoss</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
