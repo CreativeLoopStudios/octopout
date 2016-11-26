@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = room_width / 2;
+            <string>x = view_wport[0] / 2;
 y = 0;
 
 CurrentY = (sprite_get_height(sLogo) / 2);
@@ -38,7 +38,7 @@ CurrentY += 300;
 draw_set_font(fMenu);
 if(ButtonPressed("Start Game"))
 {
-    room_goto(rJellyfishBoss);
+    room_goto(rJellyfishLevel1);
 }
 
 if(ButtonPressed("Exit"))

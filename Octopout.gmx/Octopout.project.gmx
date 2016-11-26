@@ -95,8 +95,9 @@
     <background>background\bgMenu</background>
   </backgrounds>
   <paths name="paths">
-    <paths name="BossesPath">
-      <path>paths\pJellyfishSwimming</path>
+    <paths name="JellyfishPath">
+      <path>paths\pJellyfishBoss</path>
+      <path>paths\pJellyfishMini</path>
     </paths>
   </paths>
   <scripts name="scripts">
@@ -190,8 +191,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rJellyfishLevel1</room>
     <room>rooms\rStartMenu</room>
+    <room>rooms\rJellyfishLevel1</room>
     <room>rooms\rJellyfishBoss</room>
     <room>rooms\rJellyfishLevel2</room>
   </rooms>

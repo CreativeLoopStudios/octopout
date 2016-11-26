@@ -79,10 +79,10 @@ global.BorderMargin = 21;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// create new ball
+            <string>/// create new ball
 if instance_exists(oPlayer)
 {
-    instance_create(oPlayer.x, oPlayer.y - (oPlayer.sprite_height / 2) - 15, oBall);
+    instance_create(oPlayer.x, oPlayer.y - (oPlayer.sprite_height / 2) - (sprite_get_height(sBall) / 2), oBall);
     BallAlarmSet = false;
 }
 </string>

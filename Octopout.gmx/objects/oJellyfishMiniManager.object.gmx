@@ -26,10 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-x = room_width / 3;
 y = 250;
 
-BossState = "Swimming";
+path_start(pJellyfishMini, 1, path_action_continue, false);
 </string>
           </argument>
         </arguments>
@@ -59,46 +58,11 @@ var JellyfishMiniFile = json_decode(file);
 
 GenerateEnemyFromJson(JellyfishMiniFile);
 
-x += x;
-
-//GenerateEnemyFromJson(JellyfishMiniFile);
-
-x += x;
-
-//GenerateEnemyFromJson(JellyfishMiniFile);
-
-ds_list_destroy(DefaultList);
 ds_map_destroy(JellyfishMiniFile);
 
 
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// State control
-if BossState == "Swimming"
-{
-}
 </string>
           </argument>
         </arguments>

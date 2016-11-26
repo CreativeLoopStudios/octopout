@@ -62,4 +62,4 @@ for(var i = 0; i < 1; i++)
     ds_list_destroy(Tile);
 }
 
-return DefaultList;
+ds_list_destroy(DefaultList);
