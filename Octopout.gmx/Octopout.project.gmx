@@ -146,6 +146,10 @@
       <script>scripts\GenerateEnemyFromJson.gml</script>
       <script>scripts\SetEnumBricks.gml</script>
     </scripts>
+    <scripts name="Ball">
+      <script>scripts\IncreaseBallSpeed.gml</script>
+      <script>scripts\DecreaseBallSpeed.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fDebug</font>

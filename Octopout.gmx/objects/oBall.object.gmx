@@ -169,14 +169,34 @@ if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
         }
     }
     
-    move_bounce_all(true);
+    
     if State != "BlackBall"
     {
         CountToCreateBlackBall += 1;
     }
-    if(abs(oPlayer.hspeed) == 0 ){
-        speed *= down_spd
-        speed = max(speed, min_spd);
+    
+    if(oPlayer.hspeed &lt; 0) {
+        if(hspeed &gt;= 0) {
+            move_bounce_all(true);
+            IncreaseBallSpeed();
+        } else if (hspeed &lt;= 0){
+            direction = point_direction(oPlayer.x, oPlayer.y, x, y);
+            DecreaseBallSpeed();
+        } else {
+            direction = random_range(67, 113);
+        }
+    } else if (oPlayer.hspeed &gt; 0){
+        if(hspeed &lt;= 0) {
+            move_bounce_all(true);
+            IncreaseBallSpeed();
+        } else  if (hspeed &gt;= 0){
+            direction = point_direction(oPlayer.x, oPlayer.y, x, y);
+            DecreaseBallSpeed();
+        } else {
+            direction = random_range(67, 113);
+        } 
+    } else {
+        move_bounce_all(true);
     }
 }
 </string>
@@ -251,8 +271,7 @@ if instance_exists(brick)
     }
 
     move_bounce_all(true);
-    speed += up_spd;
-    speed = min(speed, max_spd)
+    IncreaseBallSpeed();
     
     if State == "BlackBall"
     {
