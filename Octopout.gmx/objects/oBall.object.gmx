@@ -182,9 +182,7 @@ if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
         } else if (hspeed &lt;= 0){
             direction = point_direction(oPlayer.x, oPlayer.y, x, y);
             DecreaseBallSpeed();
-        } else {
-            direction = random_range(67, 113);
-        }
+        } 
     } else if (oPlayer.hspeed &gt; 0){
         if(hspeed &lt;= 0) {
             move_bounce_all(true);
@@ -192,8 +190,6 @@ if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
         } else  if (hspeed &gt;= 0){
             direction = point_direction(oPlayer.x, oPlayer.y, x, y);
             DecreaseBallSpeed();
-        } else {
-            direction = random_range(67, 113);
         } 
     } else {
         move_bounce_all(true);
