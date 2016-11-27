@@ -50,7 +50,6 @@
     <sprites name="BackgroundLife">
       <sprite>sprites\sCoral</sprite>
       <sprite>sprites\sJellyfish</sprite>
-      <sprite>sprites\sRayo</sprite>
     </sprites>
     <sprites name="Ball">
       <sprite>sprites\sBall</sprite>
@@ -64,6 +63,10 @@
       <sprite>sprites\sBrickPurple</sprite>
       <sprite>sprites\sBrickSand</sprite>
       <sprite>sprites\sBrickWall</sprite>
+    </sprites>
+    <sprites name="Explosions">
+      <sprite>sprites\sExplosion</sprite>
+      <sprite>sprites\sExplosionBlackBall</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\sLogo</sprite>
@@ -85,9 +88,9 @@
       <sprite>sprites\sPlayer</sprite>
       <sprite>sprites\sPlayerLeft</sprite>
       <sprite>sprites\sPlayerRight</sprite>
+      <sprite>sprites\sBlackSplash</sprite>
     </sprites>
     <sprite>sprites\sDebugRect</sprite>
-    <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sHeartBrick</sprite>
   </sprites>
   <backgrounds name="background">
@@ -153,7 +156,10 @@
       <object>objects\oBackgroundGenerator</object>
       <object>objects\oBackgroundCoral</object>
       <object>objects\oBackgroundJellyfish</object>
-      <object>objects\oBackgroundRayo</object>
+    </objects>
+    <objects name="Ball">
+      <object>objects\oBall</object>
+      <object>objects\oExplosionBlackBall</object>
     </objects>
     <objects name="Debug">
       <object>objects\oFPS</object>
@@ -177,7 +183,6 @@
       <object>objects\oPauseMenu</object>
       <object>objects\oStartMenu</object>
     </objects>
-    <object>objects\oBall</object>
     <object>objects\oGame</object>
     <objects name="Particules">
       <object>objects\oParticules</object>
@@ -188,6 +193,7 @@
     <objects name="Player">
       <object>objects\oPlayer</object>
       <object>objects\oPlayerHealth</object>
+      <object>objects\oBlackSplash</object>
     </objects>
     <objects name="Shader">
       <object>objects\oWater</object>
