@@ -50,7 +50,6 @@
     <sprites name="BackgroundLife">
       <sprite>sprites\sCoral</sprite>
       <sprite>sprites\sJellyfish</sprite>
-      <sprite>sprites\sRayo</sprite>
     </sprites>
     <sprites name="Ball">
       <sprite>sprites\sBall</sprite>
@@ -152,7 +151,6 @@
       <object>objects\oBackgroundGenerator</object>
       <object>objects\oBackgroundCoral</object>
       <object>objects\oBackgroundJellyfish</object>
-      <object>objects\oBackgroundRayo</object>
     </objects>
     <objects name="Debug">
       <object>objects\oFPS</object>
