@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles">
-    <datafiles number="1" name="Maps">
+  <datafiles number="2" name="datafiles">
+    <datafiles number="2" name="Maps">
       <datafile>
         <name>jellyfish-boss-map.json</name>
         <exists>-1</exists>
@@ -22,6 +22,23 @@
         </ConfigOptions>
         <filename>jellyfish-boss-map.json</filename>
       </datafile>
+      <datafile>
+        <name>jellyfish-mini-map.json</name>
+        <exists>-1</exists>
+        <size>271</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>jellyfish-mini-map.json</filename>
+      </datafile>
     </datafiles>
   </datafiles>
   <NewExtensions/>
@@ -31,29 +48,34 @@
   </sounds>
   <sprites name="sprites">
     <sprites name="BackgroundLife">
-      <sprite>sprites\sJellyfish</sprite>
       <sprite>sprites\sCoral</sprite>
+      <sprite>sprites\sJellyfish</sprite>
       <sprite>sprites\sRayo</sprite>
+    </sprites>
+    <sprites name="Ball">
+      <sprite>sprites\sBall</sprite>
+      <sprite>sprites\sBlackBall</sprite>
+      <sprite>sprites\sConstructingBall</sprite>
     </sprites>
     <sprites name="Bricks">
       <sprite>sprites\sBrickGlass</sprite>
       <sprite>sprites\sBrickGreen</sprite>
       <sprite>sprites\sBrickMetal</sprite>
-      <sprite>sprites\sBrickWall</sprite>
-      <sprite>sprites\sBrickSand</sprite>
       <sprite>sprites\sBrickPurple</sprite>
+      <sprite>sprites\sBrickSand</sprite>
+      <sprite>sprites\sBrickWall</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\sLogo</sprite>
     </sprites>
     <sprites name="MiniBricks">
+      <sprite>sprites\sMiniBrickBomb</sprite>
       <sprite>sprites\sMiniBrickGlass</sprite>
       <sprite>sprites\sMiniBrickGreen</sprite>
       <sprite>sprites\sMiniBrickMetal</sprite>
-      <sprite>sprites\sMiniBrickWall</sprite>
-      <sprite>sprites\sMiniBrickSand</sprite>
       <sprite>sprites\sMiniBrickPurple</sprite>
-      <sprite>sprites\sMiniBrickBomb</sprite>
+      <sprite>sprites\sMiniBrickSand</sprite>
+      <sprite>sprites\sMiniBrickWall</sprite>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\sBubble</sprite>
@@ -61,20 +83,21 @@
     </sprites>
     <sprites name="Player">
       <sprite>sprites\sPlayer</sprite>
-      <sprite>sprites\sPlayerRight</sprite>
       <sprite>sprites\sPlayerLeft</sprite>
+      <sprite>sprites\sPlayerRight</sprite>
     </sprites>
-    <sprite>sprites\sBall</sprite>
     <sprite>sprites\sDebugRect</sprite>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sHeartBrick</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgSea</background>
+    <background>background\bgMenu</background>
   </backgrounds>
   <paths name="paths">
-    <paths name="BossesPath">
-      <path>paths\pJellyfishSwimming</path>
+    <paths name="JellyfishPath">
+      <path>paths\pJellyfishBoss</path>
+      <path>paths\pJellyfishMini</path>
     </paths>
   </paths>
   <scripts name="scripts">
@@ -84,33 +107,41 @@
     </scripts>
     <scripts name="Brick">
       <script>scripts\BrickHitDetected.gml</script>
-      <script>scripts\SetHitsBeforeDestroy.gml</script>
       <script>scripts\CreateBrick.gml</script>
+      <script>scripts\SetHitsBeforeDestroy.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\DebugLog.gml</script>
       <script>scripts\DebugLogDraw.gml</script>
       <script>scripts\DebugLogInitialise.gml</script>
     </scripts>
+    <scripts name="Menu">
+      <script>scripts\ButtonPressed.gml</script>
+      <script>scripts\CheckIfPaused.gml</script>
+      <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
+    </scripts>
     <scripts name="Particles">
-      <script>scripts\BubbleParticuleInit.gml</script>
       <script>scripts\BrickDustParticuleInit.gml</script>
+      <script>scripts\BubbleParticuleInit.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\PlayerLoseHealth.gml</script>
     </scripts>
+    <scripts name="Sound">
+      <script>scripts\PlaySoundtrack.gml</script>
+    </scripts>
     <scripts name="Util">
-      <script>scripts\ButtonPressed.gml</script>
       <script>scripts\ChangeSprite.gml</script>
-      <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
       <script>scripts\InitialiseRoom.gml</script>
       <script>scripts\KeepInsideRoom.gml</script>
       <script>scripts\ReadJsonFile.gml</script>
+      <script>scripts\ScreenSettings.gml</script>
+    </scripts>
+    <scripts name="Enemies">
+      <script>scripts\GenerateEnemyFromJson.gml</script>
+      <script>scripts\SetEnumBricks.gml</script>
     </scripts>
   </scripts>
-  <shaders name="shaders">
-    <shader type="GLSLES">shaders\shOutline.shader</shader>
-  </shaders>
   <fonts name="fonts">
     <font>fonts\fDebug</font>
     <font>fonts\fMenu</font>
@@ -118,26 +149,31 @@
   <objects name="objects">
     <objects name="BackgroundLife">
       <object>objects\oBackgroundGenerator</object>
-      <object>objects\oBackgroundJellyfish</object>
       <object>objects\oBackgroundCoral</object>
+      <object>objects\oBackgroundJellyfish</object>
       <object>objects\oBackgroundRayo</object>
-    </objects>
-    <objects name="Bosses">
-      <objects name="Jellyfish">
-        <object>objects\oJellyfishManager</object>
-        <object>objects\oJellyfishMiniGlassBrick</object>
-        <object>objects\oJellyfishMiniGreenBrick</object>
-        <object>objects\oJellyfishMiniPurpleBrick</object>
-        <object>objects\oJellyfishMiniMetalBrick</object>
-        <object>objects\oJellyfishHeart</object>
-        <object>objects\oJellyfishMovement</object>
-      </objects>
     </objects>
     <objects name="Debug">
       <object>objects\oFPS</object>
     </objects>
+    <objects name="Enemies">
+      <objects name="Bricks">
+        <object>objects\oHeartBrick</object>
+        <object>objects\oMiniGlassBrick</object>
+        <object>objects\oMiniGreenBrick</object>
+        <object>objects\oMiniMetalBrick</object>
+        <object>objects\oMiniPurpleBrick</object>
+      </objects>
+      <objects name="Jellyfish">
+        <object>objects\oJellyfishBossManager</object>
+        <object>objects\oJellyfishMiniManager</object>
+      </objects>
+      <object>objects\oJellyfishMovement</object>
+    </objects>
     <objects name="Menu">
-      <object>objects\oMenu</object>
+      <object>objects\oLogo</object>
+      <object>objects\oPauseMenu</object>
+      <object>objects\oStartMenu</object>
     </objects>
     <object>objects\oBall</object>
     <object>objects\oGame</object>
@@ -151,13 +187,15 @@
       <object>objects\oPlayer</object>
       <object>objects\oPlayerHealth</object>
     </objects>
+    <objects name="Shader">
+      <object>objects\oWater</object>
+    </objects>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rStartMenu</room>
-    <room>rooms\rJellyfishBoss</room>
     <room>rooms\rJellyfishLevel1</room>
     <room>rooms\rJellyfishLevel2</room>
+    <room>rooms\rJellyfishBoss</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

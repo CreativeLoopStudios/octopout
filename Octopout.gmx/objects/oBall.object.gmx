@@ -34,7 +34,10 @@ down_spd = 0.8
 State = "Hold";
 direction = random_range(20, 200);
 
-CollisionsCountWithRectAngle = 0;
+// black ball power up
+NumberOfTimesToCreateBlackBall = 3;
+
+IsSpriteChanged = true;
 </string>
           </argument>
         </arguments>
@@ -111,7 +114,7 @@ if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= room_height)
     if(y &gt;= room_height)
     {
         PlayerLoseHealth();
-        //instance_destroy();
+        instance_destroy();
     }
 }
 
@@ -149,10 +152,40 @@ if (x &lt;= global.BorderMargin + (sprite_width / 2) or x &gt;= room_width - glo
 if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
 {
     move_bounce_all(true);
+    if State != "BlackBall"
+    {
+        NumberOfTimesToCreateBlackBall -= 1;
+    }
     if(abs(oPlayer.hspeed) == 0 ){
         speed *= down_spd
         speed = max(speed, min_spd);
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// create black ball
+if NumberOfTimesToCreateBlackBall == 0
+{
+    State = "BlackBall";
+    IsSpriteChanged = true;
 }
 </string>
           </argument>
@@ -191,6 +224,41 @@ if instance_exists(brick)
     }
 } 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// change sprite
+if IsSpriteChanged
+{
+    if State == "BlackBall"
+    {
+        sprite_index = sBlackBall;
+        NumberOfTimesToCreateBlackBall = 3;
+        image_speed = 0;
+    }
+    else
+    {
+        sprite_index = sBall;
+    }
+    IsSpriteChanged = false;
+}
 </string>
           </argument>
         </arguments>

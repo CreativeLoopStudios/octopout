@@ -1,9 +1,9 @@
 HitsBeforeDestroy -= 1;
+part_particles_create(global.ParticulesSystem, x, y, global.BrickDustParticule, 5);
         
 if HitsBeforeDestroy == 0
 {
     instance_destroy();
-    part_particles_create(global.ParticulesSystem, x, y, global.BrickDustParticule, 5);
 }
 
 if LastHitCount > HitsBeforeDestroy

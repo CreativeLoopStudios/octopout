@@ -32,7 +32,7 @@ draw_set_alpha(1);
 draw_set_colour(c_white);
 
 CurrentY = TextTop;
-DrawTextAndUpdateCurrentY(ButtonText, BoxLeft + (Margin * 2));
+DrawTextAndUpdateCurrentY(ButtonText, BoxLeft);
 
 CurrentY = CurrentY + (Margin * 3);
 
