@@ -152,6 +152,7 @@
       <object>objects\oPlayerHealth</object>
     </objects>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rStartMenu</room>
     <room>rooms\rJellyfishBoss</room>

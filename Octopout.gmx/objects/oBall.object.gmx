@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-max_spd = 1000 / room_speed;
-min_spd = 500 / room_speed;
+max_spd = 800 / room_speed;
+min_spd = 400 / room_speed;
 up_spd = 25 / room_speed;
 down_spd = 0.8
 
@@ -111,7 +111,7 @@ if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= room_height)
     if(y &gt;= room_height)
     {
         PlayerLoseHealth();
-        instance_destroy();
+        //instance_destroy();
     }
 }
 
