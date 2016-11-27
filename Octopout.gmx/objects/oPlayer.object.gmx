@@ -76,6 +76,14 @@ if (right_pressed or gamepad_horizontal_right_pressed)
 {
     hspeed += accel;
     hspeed = min(hspeed, max_spd);
+    
+    var max_x_allowed = room_width - (sprite_width/2 + global.BorderMargin);
+    
+    if(x + hspeed &gt; max_x_allowed)
+    {
+        hspeed =  max_x_allowed - x;
+    }
+    
     ChangeSprite(sPlayerRight, AnimationSpeed);
     part_particles_create(global.ParticulesSystem, x, random_range(y, y - (sprite_width / 2)), global.BubbleParticle, NumberOfBubblesWhenMoving);
     part_particles_create(global.ParticulesSystem, x, y, global.BubbleParticle, NumberOfBubblesWhenMoving);
@@ -86,6 +94,14 @@ if (right_pressed or gamepad_horizontal_right_pressed)
 if(left_pressed or gamepad_horizontal_left_pressed) {
     hspeed -= accel;
     hspeed = max(hspeed, -max_spd);
+    
+    var min_x_allowed = sprite_width/2 + global.BorderMargin;
+     
+    if(x + hspeed &lt; min_x_allowed)
+    {
+        hspeed =  -(x - min_x_allowed);
+    }
+    
     ChangeSprite(sPlayerLeft, AnimationSpeed);
     part_particles_create(global.ParticulesSystem, x, random_range(y, y - (sprite_width / 2)), global.BubbleParticle, NumberOfBubblesWhenMoving);
     part_particles_create(global.ParticulesSystem, x, y, global.BubbleParticle, NumberOfBubblesWhenMoving);
@@ -99,7 +115,7 @@ if(left_right_pressed_or_not and gamepad_pressed_or_not) {
     ChangeSprite(sPlayer, 1);
 }
 
-KeepInsideRoom(sprite_width, sprite_height, max_spd);
+KeepInsideRoom(sprite_width, hspeed);
 </string>
           </argument>
         </arguments>

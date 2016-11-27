@@ -26,13 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-max_spd = 800 / room_speed;
-min_spd = 400 / room_speed;
+max_spd = 1000 / room_speed;
+min_spd = 500 / room_speed;
 up_spd = 25 / room_speed;
 down_spd = 0.8
 
 State = "Hold";
-direction = random_range(20, 200);
 
 // black ball power up
 NumberOfTimesToCreateBlackBall = 3;
@@ -151,6 +150,23 @@ if (x &lt;= global.BorderMargin + (sprite_width / 2) or x &gt;= room_width - glo
 
 if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
 {
+
+    if(place_meeting(x + hspeed, y, oPlayer))
+    {
+        while (!place_meeting(x + sign(hspeed), y, oPlayer))
+        {
+            x += sign(hspeed);
+        }
+    }
+    
+    if(place_meeting(x, y + vspeed, oPlayer))
+    {
+        while (!place_meeting(x, y + sign(vspeed), oPlayer))
+        {
+            y += sign(vspeed);
+        }
+    }
+    
     move_bounce_all(true);
     if State != "BlackBall"
     {
@@ -210,8 +226,26 @@ if NumberOfTimesToCreateBlackBall == 0
             <string>/// collision with brick
 var brick = instance_place(x + hspeed, y + vspeed, oDefaultBrick);
 
+
 if instance_exists(brick)
 {
+
+    if(place_meeting(x + hspeed, y, oDefaultBrick))
+    {
+        while (!place_meeting(x + sign(hspeed), y, oDefaultBrick))
+        {
+            x += sign(hspeed);
+        }
+    }
+    
+    if(place_meeting(x, y + vspeed, oDefaultBrick))
+    {
+        while (!place_meeting(x, y + sign(vspeed), oDefaultBrick))
+        {
+            y += sign(vspeed);
+        }
+    }
+
     move_bounce_all(true);
     speed += up_spd;
     speed = min(speed, max_spd)

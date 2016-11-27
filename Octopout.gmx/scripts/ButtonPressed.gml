@@ -7,8 +7,9 @@ var TextTop = BoxTop + Margin;
 var BoxBottom = BoxTop + Margin + string_height(ButtonText) + Margin;
 var HalfTextWidth = string_width(ButtonText) / 2;
 
-var BoxLeft = x - HalfTextWidth - (Margin * 2);
-var BoxRight = x + HalfTextWidth + (Margin * 2);
+var TextHorizontalMargin = (Margin * 2);
+var BoxLeft = x - HalfTextWidth - TextHorizontalMargin;
+var BoxRight = x + HalfTextWidth + TextHorizontalMargin;
 
 draw_set_colour(make_colour_hsv(0, 200, 128));
 
@@ -32,7 +33,7 @@ draw_set_alpha(1);
 draw_set_colour(c_white);
 
 CurrentY = TextTop;
-DrawTextAndUpdateCurrentY(ButtonText, BoxLeft);
+DrawTextAndUpdateCurrentY(ButtonText, BoxLeft + TextHorizontalMargin);
 
 CurrentY = CurrentY + (Margin * 3);
 

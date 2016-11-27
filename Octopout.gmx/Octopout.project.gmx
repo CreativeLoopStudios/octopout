@@ -117,6 +117,7 @@
     </scripts>
     <scripts name="Menu">
       <script>scripts\ButtonPressed.gml</script>
+      <script>scripts\TextOnScreen.gml</script>
       <script>scripts\CheckIfPaused.gml</script>
       <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
     </scripts>
