@@ -114,6 +114,7 @@
       <script>scripts\DebugLog.gml</script>
       <script>scripts\DebugLogDraw.gml</script>
       <script>scripts\DebugLogInitialise.gml</script>
+      <script>scripts\DisplayWriteSpecs.gml</script>
     </scripts>
     <scripts name="Menu">
       <script>scripts\ButtonPressed.gml</script>

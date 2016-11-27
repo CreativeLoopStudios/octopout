@@ -13,15 +13,17 @@
   <code>/// set global objects
 InitialiseRoom();
 
+var MinionOffSet = 50;
+
 // enemies
-var X = view_wport[0] / 6;
-instance_create(X * 2, 0, oJellyfishMiniManager);
-instance_create(X * 4, 0, oJellyfishMiniManager);
-instance_create(X * 6, 0, oJellyfishMiniManager);
+var X = view_wport[0] / 8;
+instance_create(X * 2 + MinionOffSet, 0, oJellyfishMiniManager);
+instance_create(X * 4 + MinionOffSet, 0, oJellyfishMiniManager);
+instance_create(X * 6 + MinionOffSet, 0, oJellyfishMiniManager);
 
 // set main music
 PlaySoundtrack(aMainTrack);</code>
-  <enableViews>0</enableViews>
+  <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
@@ -51,7 +53,7 @@ PlaySoundtrack(aMainTrack);</code>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1280" hview="1024" xport="0" yport="0" wport="1280" hport="1024" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>

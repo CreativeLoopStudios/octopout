@@ -32,6 +32,7 @@ up_spd = 25 / room_speed;
 down_spd = 0.8
 
 State = "Hold";
+direction = random_range(67, 113);
 
 // black ball power up
 NumberOfTimesToCreateBlackBall = 3;
@@ -102,7 +103,7 @@ else if State == "Move"
           <argument>
             <kind>1</kind>
             <string>/// collision
-if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= room_height)
+if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= view_hport[0])
 {
     vspeed *= -1;
     if direction == 90 or direction == 270
@@ -110,14 +111,14 @@ if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= room_height)
         direction += 5;
     }
     
-    if(y &gt;= room_height)
+    if(y &gt;= view_hport[0])
     {
         PlayerLoseHealth();
         instance_destroy();
     }
 }
 
-if (x &lt;= global.BorderMargin + (sprite_width / 2) or x &gt;= room_width - global.BorderMargin - (sprite_width / 2))
+if (x &lt;= global.BorderMargin + (sprite_width / 2) or x &gt;= view_wport[0] - global.BorderMargin - (sprite_width / 2))
 {
     hspeed *= -1;
     if direction == 0 or direction == 180

@@ -33,7 +33,14 @@
     draw_set_halign(fa_right);
     draw_set_valign(fa_top);
     
-    draw_text(room_width - 50, 50, fps);
+    draw_text(view_wport[0] - 50, 50, fps);
+    
+    draw_text(view_wport[0] + 250,5,DisplayWriteSpecs(display.screen)+"#"+
+              DisplayWriteSpecs(display.window)+"#"+
+              DisplayWriteSpecs(display.app_surface)+"#"+
+              DisplayWriteSpecs(display.view)+"#"+
+              DisplayWriteSpecs(display.gui)
+              );
 }
 </string>
           </argument>

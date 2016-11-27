@@ -6,5 +6,5 @@ var HalfWidth = 0;
 
 if (Width > 0) HalfWidth = Width / 2;
 
-x = clamp(x, HalfWidth + global.BorderMargin, room_width - (HalfWidth + global.BorderMargin));
+x = clamp(x, HalfWidth + global.BorderMargin, view_wport[0] - (HalfWidth + global.BorderMargin));
 

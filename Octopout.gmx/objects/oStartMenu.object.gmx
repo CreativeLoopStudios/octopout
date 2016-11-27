@@ -25,17 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = view_wport[0] / 2;
+            <string>draw_set_color(c_black);
+draw_rectangle(0, 0, view_wport[0], view_hport[0], 0);
+    
+x = view_wport[0] / 2;
 y = 0;
 
-CurrentY = (sprite_get_height(sLogo) / 2);
+Margin = 10;
+var LogoHeigth = sprite_get_height(sLogo);
+CurrentY = (LogoHeigth / 2);
 
 // generate start menu
 draw_sprite_ext(sLogo, 0, x, CurrentY, 0.8, 0.8, image_angle, image_blend, image_alpha);
 //instance_create(x, CurrentY, oLogo);
 
-Margin = 10;
-CurrentY += 300;
+CurrentY += (LogoHeigth / 2);
+
+CurrentY += 75;
 draw_set_font(fMenu);
 if(ButtonPressed("Start Game"))
 {

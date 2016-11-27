@@ -13,8 +13,8 @@ for(var i = 0; i < NumberToGenerate; i += 1)
     var Life = instance_create(RandX, RandY, oLife);
     with Life
     {
-        var Scale = (RandY * 1.5) / room_height;
-        var Alpha = RandY / room_height;
+        var Scale = (RandY * 1.5) / view_hport[0];
+        var Alpha = RandY / view_hport[0];
         image_xscale = Scale;
         image_yscale = Scale;
         image_alpha = Alpha;
