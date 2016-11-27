@@ -226,10 +226,8 @@ if NumberOfTimesToCreateBlackBall == 0
             <string>/// collision with brick
 var brick = instance_place(x + hspeed, y + vspeed, oDefaultBrick);
 
-
 if instance_exists(brick)
 {
-
     if(place_meeting(x + hspeed, y, oDefaultBrick))
     {
         while (!place_meeting(x + sign(hspeed), y, oDefaultBrick))
@@ -256,8 +254,7 @@ if instance_exists(brick)
             BrickHitDetected();
         }
     }
-} 
-
+}
 </string>
           </argument>
         </arguments>
