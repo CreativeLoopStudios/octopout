@@ -45,7 +45,7 @@ CurrentY += 75;
 draw_set_font(fMenu);
 if(ButtonPressed("Start Game"))
 {
-    room_goto(rJellyfishLevel1);
+    room_goto(rJellyfishLevel);
 }
 
 if(ButtonPressed("Exit"))

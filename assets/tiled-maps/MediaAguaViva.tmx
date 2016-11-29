@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="8" height="12" tilewidth="48" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" name="minitijolos6" tilewidth="48" tileheight="32" tilecount="1" columns="1">
-  <image source="bricks/minitijolos6.png" width="48" height="32"/>
+  <image source="../images/minitijolos6.png" width="48" height="32"/>
  </tileset>
  <tileset firstgid="2" name="minitijolos1" tilewidth="48" tileheight="32" tilecount="1" columns="1">
-  <image source="bricks/minitijolos1.png" width="48" height="32"/>
+  <image source="../images/minitijolos1.png" width="48" height="32"/>
  </tileset>
  <tileset firstgid="3" name="minitijolos15" tilewidth="48" tileheight="32" tilecount="1" columns="1">
-  <image source="bricks/minitijolos15.png" width="48" height="32"/>
+  <image source="../images/minitijolos15.png" width="48" height="32"/>
  </tileset>
  <layer name="Camada de Tiles 1" width="8" height="12">
   <data encoding="csv">

@@ -13,13 +13,13 @@
   <code>/// set global objects
 InitialiseRoom();
 
-var MinionOffSet = 50;
+var MinionOffset = 50;
 
 // enemies
 var X = view_wport[0] / 8;
-instance_create(X * 2 + MinionOffSet, 0, oJellyfishMiniManager);
-instance_create(X * 4 + MinionOffSet, 0, oJellyfishMiniManager);
-instance_create(X * 6 + MinionOffSet, 0, oJellyfishMiniManager);
+instance_create(X * 2 + MinionOffset, 0, oJellyfishMiniManager);
+instance_create(X * 4 + MinionOffset, 0, oJellyfishMiniManager);
+instance_create(X * 6 + MinionOffset, 0, oJellyfishMiniManager);
 
 // set main music
 PlaySoundtrack(aMainTrack);</code>

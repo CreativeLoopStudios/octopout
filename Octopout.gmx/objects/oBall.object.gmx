@@ -341,7 +341,7 @@ if IsSpriteChanged
           <argument>
             <kind>1</kind>
             <string>/// debug: increase speed
-if global.Debug == true
+if global.Debug
 {
     if keyboard_check_pressed(vk_add)
     {

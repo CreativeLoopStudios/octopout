@@ -25,14 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// set default variables
-global.Debug = true;
+            <string>/// set variables
+TargetY = 300;
+direction = 270;
+speed = 100 / room_speed;
 
-DebugLogInitialise();
-
-BallAlarmSet = false;
-
-ScreenSettings();
+Reached = false;
 </string>
           </argument>
         </arguments>
@@ -53,38 +51,20 @@ ScreenSettings();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// set global variables
-global.BorderMargin = 21;
+            <string>/// create bricks of the medium jellyfish
+SetEnumBricks();
+
+var file = ReadJsonFile("jellyfish-medium-map.json");
+
+var JellyfishMediumFile = json_decode(file);
+
+GenerateEnemyFromJson(JellyfishMediumFile);
+
+ds_map_destroy(JellyfishMediumFile);
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// create new ball
-if instance_exists(oPlayer) and BallAlarmSet
-{
-    instance_create(oPlayer.x, oPlayer.y - (oPlayer.sprite_height / 2) - (sprite_get_height(sBall) / 2), oBall);
-    BallAlarmSet = false;
-}
+
+
 </string>
           </argument>
         </arguments>
@@ -107,21 +87,10 @@ if instance_exists(oPlayer) and BallAlarmSet
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// default options
-if global.Debug
+            <string>/// end level
+if instance_number(oDefaultBrick) == 0
 {
-    if keyboard_check_pressed(ord('R'))
-    {
-        game_restart();
-    }
-    
-    if keyboard_check_pressed(ord('K'))
-    {
-        with oDefaultBrick
-        {
-            instance_destroy();
-        }
-    }
+    EndLevelAndBeginTheNext(3, id);
 }
 </string>
           </argument>
@@ -143,38 +112,13 @@ if global.Debug
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// check if there is a ball and player not died
-if instance_exists(oPlayer)
+            <string>/// stop when reach target Y
+if y &gt;= TargetY and not(Reached)
 {
-    if not(instance_exists(oBall)) and not(BallAlarmSet) and oPlayer.health &gt; 0
-    {
-        alarm[0] = 10;
-        BallAlarmSet = true;
-    }
+    speed = 0;
+    path_start(pJellyfishMini, 1, path_action_continue, false);
+    Reached = true;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>DebugLogDraw();
 </string>
           </argument>
         </arguments>
