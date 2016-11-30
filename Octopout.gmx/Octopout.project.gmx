@@ -60,8 +60,22 @@
   </datafiles>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\aMainTrack</sound>
-    <sound>sound\aStartTrack</sound>
+    <sounds name="Tracks">
+      <sound>sound\aStartTrack</sound>
+      <sound>sound\aTrackOctosfera1</sound>
+      <sound>sound\aTrackOctobissal2</sound>
+      <sound>sound\aTrackOctomestre3</sound>
+    </sounds>
+    <sounds name="SoundEffects">
+      <sounds name="BrickHit">
+        <sound>sound\aBallHit3</sound>
+      </sounds>
+      <sound>sound\aBossDie</sound>
+      <sound>sound\aLaunchingBall</sound>
+      <sound>sound\aMenuSelect</sound>
+      <sound>sound\aPlayerDying</sound>
+      <sound>sound\aBlackBallExplosion</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="BackgroundLife">
@@ -170,6 +184,8 @@
     </scripts>
     <scripts name="Sound">
       <script>scripts\PlaySoundtrack.gml</script>
+      <script>scripts\ChangeSoundtrack.gml</script>
+      <script>scripts\PlaySoundEffect.gml</script>
     </scripts>
     <scripts name="Util">
       <script>scripts\ChangeSprite.gml</script>
@@ -223,6 +239,7 @@
       <object>objects\oEndGameMessage</object>
       <object>objects\oGameOverMessage</object>
     </objects>
+    <object>objects\oSound</object>
     <object>objects\oGame</object>
     <objects name="Particules">
       <object>objects\oParticules</object>

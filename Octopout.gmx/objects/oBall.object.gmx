@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-max_spd = 1000 / room_speed;
-min_spd = 500 / room_speed;
+max_spd = 1300 / room_speed;
+min_spd = 600 / room_speed;
 up_spd = 25 / room_speed;
-down_spd = 0.8
+down_spd = 0.8;
 
 // state
 State = "Hold";
@@ -44,6 +44,9 @@ IsSpriteChanged = true;
 // combo
 CurrentComboHits = 0;
 ComboHitsToHealth = 5;
+
+// audio control
+BallHitSound = noone;
 </string>
           </argument>
         </arguments>
@@ -81,6 +84,7 @@ if State == "Hold"
     {
         speed = min_spd;
         State = "NormalBall";
+        PlaySoundEffect(noone, aLaunchingBall, 1, 0.6);
     }
 }
 else if State == "NormalBall"
@@ -88,52 +92,6 @@ else if State == "NormalBall"
     // Create bubble trail
     part_particles_create(global.ParticulesSystem, x, y, global.BubbleParticle, 1);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// collision
-if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= view_hport[0])
-{
-    vspeed *= -1;
-    if direction == 90 or direction == 270
-    {
-        direction += 5;
-    }
-    
-    if(y &gt;= view_hport[0])
-    {
-        PlayerLoseHealth();
-        ResetBlackBar();
-        instance_destroy();
-    }
-}
-
-if (x &lt;= global.BorderMargin + (sprite_width / 2) or x &gt;= view_wport[0] - global.BorderMargin - (sprite_width / 2))
-{
-    hspeed *= -1;
-    if direction == 0 or direction == 180
-    {
-        direction += 5;
-    }
-}
-
 </string>
           </argument>
         </arguments>
@@ -224,37 +182,6 @@ if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// create black ball
-if CountToCreateBlackBall == NumberOfTimesToCreateBlackBall
-{
-    State = "BlackBall";
-    IsSpriteChanged = true;
-    ResetBlackBar();
-    if instance_exists(oPlayer)
-    {
-        oPlayer.State = "BlackSplash";
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// collision with brick
 var brick = instance_place(x + hspeed, y + vspeed, oDefaultBrick);
 
@@ -286,6 +213,9 @@ if instance_exists(brick)
         PlayerGainHealth();
     }
     
+    // Sound effect play
+    BallHitSound = PlaySoundEffect(BallHitSound, aBallHit3, 1, 0.5);
+    
     // States
     if State == "BlackBall"
     {
@@ -301,6 +231,83 @@ if instance_exists(brick)
                 BrickHitDetected();
             }
         }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// collision
+if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= view_hport[0])
+{
+    vspeed *= -1;
+    if direction == 90 or direction == 270
+    {
+        direction += 5;
+    }
+    
+    if(y &gt;= view_hport[0])
+    {
+        PlayerLoseHealth();
+        ResetBlackBar();
+        instance_destroy();
+    }
+}
+
+if (x &lt;= global.BorderMargin + (sprite_width / 2) or x &gt;= view_wport[0] - global.BorderMargin - (sprite_width / 2))
+{
+    hspeed *= -1;
+    if direction == 0 or direction == 180
+    {
+        direction += 5;
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// create black ball
+if CountToCreateBlackBall == NumberOfTimesToCreateBlackBall
+{
+    State = "BlackBall";
+    IsSpriteChanged = true;
+    ResetBlackBar();
+    if instance_exists(oPlayer)
+    {
+        oPlayer.State = "BlackSplash";
     }
 }
 </string>

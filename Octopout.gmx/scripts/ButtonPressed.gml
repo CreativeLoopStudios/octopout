@@ -21,6 +21,7 @@ if (device_mouse_x_to_gui(0) > BoxLeft
     draw_set_alpha(1);
     
     if(mouse_check_button_pressed(mb_left)) {
+        PlaySoundEffect(noone, aMenuSelect, 1, 1);
         Result = true;
     }
 } else {

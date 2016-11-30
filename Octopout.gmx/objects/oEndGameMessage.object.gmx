@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
+PlaySoundEffect(noone, aBossDie, 1, 1);
 alarm[0] = 8 * room_speed;
 </string>
           </argument>

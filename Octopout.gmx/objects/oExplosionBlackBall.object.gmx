@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// set variables
 image_speed = 0.2;
+PlaySoundEffect(noone, aBlackBallExplosion, 1, 1);
 </string>
           </argument>
         </arguments>

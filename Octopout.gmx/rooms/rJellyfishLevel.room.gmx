@@ -20,7 +20,7 @@ var HalfOfTheScreen = view_wport[0] / 2;
 instance_create(HalfOfTheScreen + MinionOffset, 0, oJellyfishMediumManager);
 
 // set main music
-PlaySoundtrack(aMainTrack);</code>
+audio_stop_sound(aStartTrack);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

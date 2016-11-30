@@ -42,6 +42,8 @@ TargetXScale = 2;
 TargetYScale = 2;
 
 HealthAnimation = false;
+
+GameOver = false;
 </string>
           </argument>
         </arguments>
@@ -128,9 +130,10 @@ else
           <argument>
             <kind>1</kind>
             <string>/// gameover
-if health &lt;= 0
+if health &lt;= 0 and GameOver == false
 {
     instance_create(0, 0, oGameOverMessage);
+    GameOver = true;
 }
 </string>
           </argument>

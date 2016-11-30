@@ -12,10 +12,7 @@
   <showcolour>-1</showcolour>
   <code>/// set global objects
 ScreenSettings();
-instance_create(0, 0, oStartMenu);
-
-// set main music
-PlaySoundtrack(aStartTrack);</code>
+instance_create(0, 0, oStartMenu);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

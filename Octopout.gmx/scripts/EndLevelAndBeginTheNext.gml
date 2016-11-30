@@ -21,8 +21,12 @@ if Level == 2
     instance_create(X * 2 + MinionOffset, -250, oJellyfishMiniManager);
     instance_create(X * 4 + MinionOffset, -250, oJellyfishMiniManager);
     instance_create(X * 6 + MinionOffset, -250, oJellyfishMiniManager);
+    
+    ChangeSoundtrack(aTrackOctobissal2);
 }
 else if Level == 3
 {
     instance_create(HalfOfTheScreen + MinionOffset, -250, oJellyfishBossManager);
+    
+    ChangeSoundtrack(aTrackOctomestre3);
 }
