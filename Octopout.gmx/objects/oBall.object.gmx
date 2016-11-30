@@ -31,6 +31,7 @@ min_spd = 500 / room_speed;
 up_spd = 25 / room_speed;
 down_spd = 0.8
 
+// state
 State = "Hold";
 direction = random_range(67, 113);
 
@@ -39,6 +40,10 @@ NumberOfTimesToCreateBlackBall = 1;
 CountToCreateBlackBall = 0;
 
 IsSpriteChanged = true;
+
+// combo
+CurrentComboHits = 0;
+ComboHitsToHealth = 5;
 </string>
           </argument>
         </arguments>
@@ -169,7 +174,9 @@ if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
         }
     }
     
-    
+    // resetting combos
+    CurrentComboHits = 0;
+   
     if State != "BlackBall"
     {
         CountToCreateBlackBall += 1;
@@ -269,6 +276,14 @@ if instance_exists(brick)
     move_bounce_all(true);
     IncreaseBallSpeed();
     
+    // Combo hit to gain health
+    CurrentComboHits += 1;
+    if CurrentComboHits == ComboHitsToHealth
+    {
+        PlayerGainHealth();
+    }
+    
+    // States
     if State == "BlackBall"
     {
         instance_create(x, y, oExplosionBlackBall);

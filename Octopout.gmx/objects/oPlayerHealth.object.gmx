@@ -40,7 +40,7 @@ TweenSpeed = 10 / room_speed;
 TargetXScale = 2;
 TargetYScale = 2;
 
-LostedHealth = false;
+HealthAnimation = false;
 </string>
           </argument>
         </arguments>
@@ -64,7 +64,7 @@ LostedHealth = false;
           <argument>
             <kind>1</kind>
             <string>/// lose animation
-if LostedHealth
+if HealthAnimation
 {
     image_xscale += TweenSpeed / 10;
     image_yscale += TweenSpeed / 10;
@@ -72,7 +72,7 @@ if LostedHealth
     if image_xscale &gt;= TargetXScale
         and image_yscale &gt;= TargetYScale
     {
-        LostedHealth = false;
+        HealthAnimation = false;
     }
 }
 else
@@ -111,7 +111,7 @@ var DrawX = MarginX;
 repeat(health)
 {
     draw_sprite_ext(sBall, 0, DrawX, MarginY, image_xscale, image_yscale, image_angle, c_red, image_alpha);
-    DrawX += 20;
+    DrawX += 30;
 }
 </string>
           </argument>

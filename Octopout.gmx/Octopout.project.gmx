@@ -148,6 +148,7 @@
     </scripts>
     <scripts name="Player">
       <script>scripts\PlayerLoseHealth.gml</script>
+      <script>scripts\PlayerGainHealth.gml</script>
     </scripts>
     <scripts name="Sound">
       <script>scripts\PlaySoundtrack.gml</script>
