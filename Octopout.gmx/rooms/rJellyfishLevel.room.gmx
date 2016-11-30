@@ -16,10 +16,8 @@ InitialiseRoom();
 var MinionOffset = 50;
 
 // enemies
-var X = view_wport[0] / 8;
-instance_create(X * 2 + MinionOffset, 0, oJellyfishMiniManager);
-instance_create(X * 4 + MinionOffset, 0, oJellyfishMiniManager);
-instance_create(X * 6 + MinionOffset, 0, oJellyfishMiniManager);
+var HalfOfTheScreen = view_wport[0] / 2;
+instance_create(HalfOfTheScreen + MinionOffset, 0, oJellyfishMediumManager);
 
 // set main music
 PlaySoundtrack(aMainTrack);</code>

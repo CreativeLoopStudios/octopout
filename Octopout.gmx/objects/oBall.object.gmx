@@ -36,7 +36,7 @@ State = "Hold";
 direction = random_range(67, 113);
 
 // black ball power up
-NumberOfTimesToCreateBlackBall = 4;
+NumberOfTimesToCreateBlackBall = 5;
 CountToCreateBlackBall = 0;
 
 IsSpriteChanged = true;
@@ -229,6 +229,7 @@ if CountToCreateBlackBall == NumberOfTimesToCreateBlackBall
 {
     State = "BlackBall";
     IsSpriteChanged = true;
+    ResetBlackBar();
     if instance_exists(oPlayer)
     {
         oPlayer.State = "BlackSplash";
@@ -291,7 +292,6 @@ if instance_exists(brick)
         instance_create(x, y, oExplosionBlackBall);
         State = "NormalBall";
         IsSpriteChanged = true;
-        ResetBlackBar();
     }
     else
     {
@@ -331,6 +331,18 @@ if IsSpriteChanged
         sprite_index = sBlackBall;
         CountToCreateBlackBall = 0;
         image_speed = 0.2;
+    }
+    else if State == "ConstructingBall"
+    {
+        sprite_index = sConstructingBall;
+        image_speed = 0.1;
+        if image_speed &gt; 0
+        {
+            if image_index == image_number - 1
+            {
+                State = "Hold";
+            }
+        }
     }
     else
     {

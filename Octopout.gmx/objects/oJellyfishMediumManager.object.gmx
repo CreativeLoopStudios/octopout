@@ -26,11 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-TargetY = 300;
-direction = 270;
-speed = 100 / room_speed;
+y = 300;
 
-Reached = false;
+path_start(pJellyfishMini, 1, path_action_continue, false);
 </string>
           </argument>
         </arguments>
@@ -90,34 +88,11 @@ ds_map_destroy(JellyfishMediumFile);
             <string>/// end level
 if instance_number(oDefaultBrick) == 0
 {
-    EndLevelAndBeginTheNext(3, id);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// stop when reach target Y
-if y &gt;= TargetY and not(Reached)
-{
-    speed = 0;
-    path_start(pJellyfishMini, 1, path_action_continue, false);
-    Reached = true;
+    EndLevelAndBeginTheNext(2);
+    with oJellyfishMediumManager
+    {
+        instance_destroy();
+    }
 }
 </string>
           </argument>

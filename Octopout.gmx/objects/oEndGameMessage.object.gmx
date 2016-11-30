@@ -26,52 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>/// set variables
-TargetY = 250;
-direction = 270;
-speed = 100 / room_speed;
-
-Reached = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// create bricks of the mini jellyfish
-SetEnumBricks();
-
-var file = ReadJsonFile("jellyfish-mini-map.json");
-
-var JellyfishMiniFile = json_decode(file);
-
-GenerateEnemyFromJson(JellyfishMiniFile);
-
-ds_map_destroy(JellyfishMiniFile);
-
-
-
-
-
+alarm[0] = 8 * room_speed;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -88,17 +49,15 @@ ds_map_destroy(JellyfishMiniFile);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// stop when reach target Y
-if y &gt;= TargetY and not(Reached)
-{
-    speed = 0;
-    path_start(pJellyfishMini, 1, path_action_continue, false);
-    Reached = true;
-}
+            <string>/// destroy
+instance_destroy();
+game_end();
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -115,15 +74,33 @@ if y &gt;= TargetY and not(Reached)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// end level
-if instance_number(oDefaultBrick) == 0
-{
-    EndLevelAndBeginTheNext(3);
-    with oJellyfishMiniManager
-    {
-        instance_destroy();
-    }
-}
+            <string>/// set UI to message
+draw_set_color(c_black);
+draw_set_alpha(0.8);
+draw_rectangle(-1, -1, view_wport[0], view_hport[0], 0);
+
+x = view_wport[0] / 2;
+y = 0;
+
+Margin = 10;
+var LogoHeight = sprite_get_height(sLogo);
+CurrentY = LogoHeight / 2;
+
+draw_set_font(fMenu);
+    
+TextOnScreen("Final Boss Defeated!");
+
+CurrentY += LogoHeight / 4;
+
+TextOnScreen("Thanks for Playing!");
+
+CurrentY += LogoHeight / 4;
+
+TextOnScreen("Leave us a message on twitter:");
+
+CurrentY += LogoHeight / 4;
+
+TextOnScreen("@panoramix360 / @guilhermekf / instagram-@fpjuni");
 </string>
           </argument>
         </arguments>

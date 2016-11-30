@@ -1,14 +1,8 @@
 /// EndLevelAndBeginTheNext(level, manager)
 var Level = argument0;
-var Manager = argument1;
 
 var MinionOffset = 50;
 var HalfOfTheScreen = view_wport[0] / 2;
-
-with Manager
-{
-    instance_destroy();
-}
 
 if instance_exists(oBall)
 {
@@ -18,9 +12,15 @@ if instance_exists(oBall)
     }
 }
 
+// show level message
+CreateNextLevelMessage();
+
 if Level == 2
 {
-    instance_create(HalfOfTheScreen + MinionOffset, -250, oJellyfishMediumManager);
+    var X = view_wport[0] / 8;
+    instance_create(X * 2 + MinionOffset, -250, oJellyfishMiniManager);
+    instance_create(X * 4 + MinionOffset, -250, oJellyfishMiniManager);
+    instance_create(X * 6 + MinionOffset, -250, oJellyfishMiniManager);
 }
 else if Level == 3
 {

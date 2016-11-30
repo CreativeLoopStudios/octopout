@@ -81,10 +81,6 @@
         
     x = view_wport[0] / 2;
     y = 0;
-
-
-    x = view_wport[0] / 2;
-    y = 0;
     
     Margin = 10;
     var LogoHeigth = sprite_get_height(sLogo);

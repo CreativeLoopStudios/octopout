@@ -129,6 +129,14 @@
       <script>scripts\GenerateMovingRandomLife.gml</script>
       <script>scripts\StayInsideRoom.gml</script>
     </scripts>
+    <scripts name="Ball">
+      <script>scripts\IncreaseBallSpeed.gml</script>
+      <script>scripts\DecreaseBallSpeed.gml</script>
+    </scripts>
+    <scripts name="BlackBar">
+      <script>scripts\GainOneBlackBarBit.gml</script>
+      <script>scripts\ResetBlackBar.gml</script>
+    </scripts>
     <scripts name="Brick">
       <script>scripts\BrickHitDetected.gml</script>
       <script>scripts\CreateBrick.gml</script>
@@ -140,11 +148,17 @@
       <script>scripts\DebugLogInitialise.gml</script>
       <script>scripts\DisplayWriteSpecs.gml</script>
     </scripts>
+    <scripts name="Enemies">
+      <script>scripts\GenerateEnemyFromJson.gml</script>
+      <script>scripts\SetEnumBricks.gml</script>
+      <script>scripts\EndLevelAndBeginTheNext.gml</script>
+    </scripts>
     <scripts name="Menu">
       <script>scripts\ButtonPressed.gml</script>
       <script>scripts\TextOnScreen.gml</script>
       <script>scripts\CheckIfPaused.gml</script>
       <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
+      <script>scripts\CreateNextLevelMessage.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\BrickDustParticuleInit.gml</script>
@@ -163,19 +177,6 @@
       <script>scripts\KeepInsideRoom.gml</script>
       <script>scripts\ReadJsonFile.gml</script>
       <script>scripts\ScreenSettings.gml</script>
-    </scripts>
-    <scripts name="Enemies">
-      <script>scripts\GenerateEnemyFromJson.gml</script>
-      <script>scripts\SetEnumBricks.gml</script>
-      <script>scripts\EndLevelAndBeginTheNext.gml</script>
-    </scripts>
-    <scripts name="Ball">
-      <script>scripts\IncreaseBallSpeed.gml</script>
-      <script>scripts\DecreaseBallSpeed.gml</script>
-    </scripts>
-    <scripts name="BlackBar">
-      <script>scripts\GainOneBlackBarBit.gml</script>
-      <script>scripts\ResetBlackBar.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -208,9 +209,9 @@
         <object>objects\oMiniPurpleBrick</object>
       </objects>
       <objects name="Jellyfish">
-        <object>objects\oJellyfishBossManager</object>
         <object>objects\oJellyfishMediumManager</object>
         <object>objects\oJellyfishMiniManager</object>
+        <object>objects\oJellyfishBossManager</object>
       </objects>
       <object>objects\oJellyfishMovement</object>
     </objects>
@@ -218,6 +219,9 @@
       <object>objects\oLogo</object>
       <object>objects\oPauseMenu</object>
       <object>objects\oStartMenu</object>
+      <object>objects\oNextLevelMessage</object>
+      <object>objects\oEndGameMessage</object>
+      <object>objects\oGameOverMessage</object>
     </objects>
     <object>objects\oGame</object>
     <objects name="Particules">
