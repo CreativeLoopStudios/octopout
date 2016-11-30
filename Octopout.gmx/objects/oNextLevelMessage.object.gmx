@@ -90,11 +90,11 @@ CurrentY = LogoHeight / 2;
 
 draw_set_font(fMenu);
     
-TextOnScreen("Level Complete!");
+TextOnScreen("Level   Complete!");
 
 CurrentY += LogoHeight / 4;
 
-TextOnScreen("Prepare for the next!");
+TextOnScreen("Prepare   for   the   next!");
 </string>
           </argument>
         </arguments>

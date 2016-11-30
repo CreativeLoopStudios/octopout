@@ -88,19 +88,19 @@ CurrentY = LogoHeight / 2;
 
 draw_set_font(fMenu);
     
-TextOnScreen("Final Boss Defeated!");
+TextOnScreen("Final   Boss   Defeated!");
 
 CurrentY += LogoHeight / 4;
 
-TextOnScreen("Thanks for Playing!");
+TextOnScreen("Thanks   for   Playing!");
 
 CurrentY += LogoHeight / 4;
 
-TextOnScreen("Leave us a message on twitter:");
+TextOnScreen("Leave   us   a   message   on   twitter:");
 
 CurrentY += LogoHeight / 4;
 
-TextOnScreen("@panoramix360 / @guilhermekf / instagram-@fpjuni");
+TextOnScreen("@panoramix360   @guilhermekf   instagram-@fpjuni");
 </string>
           </argument>
         </arguments>
