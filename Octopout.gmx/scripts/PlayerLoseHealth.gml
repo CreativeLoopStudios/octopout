@@ -1,5 +1,9 @@
 /// PlayerLoseHealth()
 if instance_exists(oPlayerHealth)
 {
-    oPlayerHealth.health -= 1;
+    with oPlayerHealth
+    {
+        health -= 1;
+        LostedHealth = true;
+    }
 }
