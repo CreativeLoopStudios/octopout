@@ -36,7 +36,7 @@ State = "Hold";
 direction = random_range(67, 113);
 
 // black ball power up
-NumberOfTimesToCreateBlackBall = 1;
+NumberOfTimesToCreateBlackBall = 4;
 CountToCreateBlackBall = 0;
 
 IsSpriteChanged = true;
@@ -120,6 +120,7 @@ if (y &lt;= global.BorderMargin + (sprite_width / 2) or y &gt;= view_hport[0])
     if(y &gt;= view_hport[0])
     {
         PlayerLoseHealth();
+        ResetBlackBar();
         instance_destroy();
     }
 }
@@ -180,6 +181,7 @@ if instance_exists(oPlayer) and place_meeting(x + hspeed, y + vspeed, oPlayer)
     if State != "BlackBall"
     {
         CountToCreateBlackBall += 1;
+        GainOneBlackBarBit();
     }
     
     if(oPlayer.hspeed &lt; 0) {
@@ -289,6 +291,7 @@ if instance_exists(brick)
         instance_create(x, y, oExplosionBlackBall);
         State = "NormalBall";
         IsSpriteChanged = true;
+        ResetBlackBar();
     }
     else
     {

@@ -73,6 +73,10 @@
       <sprite>sprites\sBlackBall</sprite>
       <sprite>sprites\sConstructingBall</sprite>
     </sprites>
+    <sprites name="BlackBar">
+      <sprite>sprites\sEmptyBlackBar</sprite>
+      <sprite>sprites\sBlackBarBit</sprite>
+    </sprites>
     <sprites name="Bricks">
       <sprite>sprites\sBrickGlass</sprite>
       <sprite>sprites\sBrickGreen</sprite>
@@ -169,6 +173,10 @@
       <script>scripts\IncreaseBallSpeed.gml</script>
       <script>scripts\DecreaseBallSpeed.gml</script>
     </scripts>
+    <scripts name="BlackBar">
+      <script>scripts\GainOneBlackBarBit.gml</script>
+      <script>scripts\ResetBlackBar.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fDebug</font>
@@ -183,6 +191,10 @@
     <objects name="Ball">
       <object>objects\oBall</object>
       <object>objects\oExplosionBlackBall</object>
+    </objects>
+    <objects name="BlackBar">
+      <object>objects\oBlackBar</object>
+      <object>objects\oBlackBarBit</object>
     </objects>
     <objects name="Debug">
       <object>objects\oFPS</object>
